@@ -16,9 +16,9 @@
     "preview": "tns preview",
     "run.android": "tns run android --env.aot",
     "run.ios": "tns run ios --env.aot",
-    "build.android": "tns build android --env.aot --env.uglify",
-    "build.ios.sim": "tns build ios --env.aot --env.uglify",
-    "build.ios": "tns build ios --for-device",
+    "build.android": "tns build android --env.aot --env.uglify --copy-to build/tns-demo-app.apk",
+    "build.ios.sim": "tns build ios --env.aot --env.uglify --copy-to build/tns-demo-app.app",
+    "build.ios": "tns build ios --for-device --copy-to build/tns-demo-app.ipa",
     "ci.base.setup": "npm i -g typescript && echo no | npm i -g nativescript && tns usage-reporting disable && tns error-reporting disable && npm i && tsc",
     "ci.pip.install": "sudo pip install --upgrade pip && sudo pip install six"
   },
