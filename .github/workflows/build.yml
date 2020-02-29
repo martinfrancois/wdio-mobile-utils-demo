@@ -72,7 +72,7 @@ jobs:
         run: fastlane ios build
         env:
           APPLE_ID: ${{ secrets.APPLE_ID }}
-          GIT_CERTIFICATE_URL: ${{ secrets.GIT_CERTIFICATE_URL }}
+          MATCH_GIT_URL: ${{ secrets.MATCH_GIT_URL }}
           MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
 
       - uses: actions/upload-artifact@v1
