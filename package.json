@@ -12,7 +12,13 @@
   "license": "Apache-2.0",
   "repository": "<fill-your-repository-here>",
   "scripts": {
-    "lint": "tslint \"src/**/*.ts\""
+    "lint": "tslint \"src/**/*.ts\"",
+    "preview": "tns preview",
+    "run:android": "tns run android",
+    "run:ios": "tns run ios",
+    "build:android": "tns build android",
+    "build:ios:sim": "tns build ios",
+    "build:ios": "tns build ios --for-device"
   },
   "dependencies": {
     "@angular/animations": "~8.2.0",
