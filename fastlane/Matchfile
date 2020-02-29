@@ -1,4 +1,4 @@
-git_url(ENV[GIT_CERTIFICATE_URL])
+git_url ENV[GIT_CERTIFICATE_URL]
 
 storage_mode("git")
 
