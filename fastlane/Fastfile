@@ -17,8 +17,8 @@ lane :build do
       scheme: "tnsdemoapp",
       workspace: './platforms/ios/tnsdemoapp.xcworkspace',
       export_method: "development"
-      output_directory("./build")
-      output_name("tns-demo-app")
+      output_directory: "./build"
+      output_name: "tns-demo-app"
     )
 end
 
