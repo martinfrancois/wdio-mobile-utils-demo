@@ -58,3 +58,22 @@ jobs:
         with:
           name: tns-demo-app.app
           path: build/tns-demo-app.app
+
+  job3:
+    name: iOS Build (Real device .ipa)
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Base Setup
+        run: npm run ci.base.setup && npm run ci.pip.install
+
+      - name: Build iOS
+        run: npm run archive.ios
+
+      - uses: actions/upload-artifact@v1
+        with:
+          name: tns-demo-app.ipa
+          path: build/tns-demo-app.ipa
+
+
