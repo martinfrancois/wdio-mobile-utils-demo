@@ -35,3 +35,7 @@ typings/
 
 # Builds
 build
+
+# Fastlane
+fastlane/report.xml
+fastlane/README.md

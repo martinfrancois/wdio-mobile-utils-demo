@@ -1,0 +1,25 @@
+fastlane_version '2.142.0'
+
+platform :ios do
+
+desc 'Fetch certificates and provisioning profiles'
+lane :certificates do
+    match(type: 'development')
+end
+
+desc 'Build the iOS application.'
+lane :build do
+    sh("tns", "prepare", "ios", "--release", "--clean", "--env.production", "--env.aot", "--env.uglify")
+
+    match(type: "development")
+
+    build_app(
+      scheme: "tnsdemoapp",
+      workspace: './platforms/ios/tnsdemoapp.xcworkspace',
+      export_method: "development"
+      output_directory("./build")
+      output_name("tns-demo-app")
+    )
+end
+
+end

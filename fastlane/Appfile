@@ -1,0 +1,2 @@
+app_identifier "com.github.martinfrancois.demo"
+apple_id ENV["APPLE_ID"]

@@ -66,10 +66,14 @@ jobs:
       - uses: actions/checkout@v1
 
       - name: Base Setup
-        run: npm run ci.base.setup && npm run ci.pip.install
+        run: npm run ci.base.setup && npm run ci.pip.install && brew cask install fastlane
 
       - name: Build iOS
-        run: npm run archive.ios
+        run: fastlane ios build
+        env:
+          APPLE_ID: ${{ secrets.APPLE_ID }}
+          GIT_CERTIFICATE_URL: ${{ secrets.GIT_CERTIFICATE_URL }}
+          MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
 
       - uses: actions/upload-artifact@v1
         with:
