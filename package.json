@@ -14,11 +14,13 @@
   "scripts": {
     "lint": "tslint \"src/**/*.ts\"",
     "preview": "tns preview",
-    "run:android": "tns run android",
-    "run:ios": "tns run ios",
-    "build:android": "tns build android",
-    "build:ios:sim": "tns build ios",
-    "build:ios": "tns build ios --for-device"
+    "run.android": "tns run android --env.aot",
+    "run.ios": "tns run ios --env.aot",
+    "build.android": "tns build android --env.aot --env.uglify",
+    "build.ios.sim": "tns build ios --env.aot --env.uglify",
+    "build.ios": "tns build ios --for-device",
+    "ci.base.setup": "npm i -g typescript && echo no | npm i -g nativescript && tns usage-reporting disable && tns error-reporting disable && cd src && npm i && tsc",
+    "ci.pip.install": "sudo pip install --upgrade pip && sudo pip install six"
   },
   "dependencies": {
     "@angular/animations": "~8.2.0",
