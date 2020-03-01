@@ -25,42 +25,33 @@ jobs:
       env:
         - BuildAndroid="28"
       script: npm run build.android
-      deploy:
-        provider: releases
-        api_key: $GITHUB_TOKEN
-        skip_cleanup: true
-        draft: true
-        file: build/tns-demo-app.apk
-        on: &on
-          branch: master
     - stage: Build iOS
       language: objective-c
       os: osx
       osx_image: xcode11.3
       before_script: npm run ci.build.ios.setup
       script: npm run build.ios.sim
+      before_deploy: zip -r ${TRAVIS_BUILD_DIR}/build/tns-demo-app.app.zip build/tns-demo-app.app
       skip_cleanup: true
       deploy:
-        - provider: script
-          script: zip -r ${TRAVIS_BUILD_DIR}/build/tns-demo-app.app.zip build/tns-demo-app.app
-          skip_cleanup: true
-          on: *on
-        - provider: releases
-          api_key: $GITHUB_TOKEN
-          skip_cleanup: true
-          draft: true
-          file: build/tns-demo-app.app.zip
-          on: &on
-            branch: master
-        - provider: script
-          script: npm run build.ios
-          skip_cleanup: true
-          on: *on
-        - provider: releases
-          api_key: $GITHUB_TOKEN
-          skip_cleanup: true
-          file: build/tns-demo-app.ipa
-          on: *on
+        provider: script
+        script: npm run build.ios
+        skip_cleanup: true
+        on: &on
+          branch: master
+
+before_deploy:
+  - export TRAVIS_TAG="preview"
+
+deploy:
+  provider: releases
+  api_key: $GITHUB_TOKEN
+  skip_cleanup: true
+  draft: true
+  overwrite: true
+  file_glob: true
+  file: build/tns-demo-app.*
+  on: *on
 
 android:
   components:
