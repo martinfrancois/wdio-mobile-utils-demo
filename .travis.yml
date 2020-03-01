@@ -28,6 +28,18 @@ jobs:
       env:
         - BuildAndroid="28"
       script: npm run build.android
+      deploy:
+        provider: releases
+        api_key: $GITHUB_TOKEN
+        skip_cleanup: true
+        file_glob: true
+        file: build/tns-demo-app.*
+        name: Release $TRAVIS_TAG
+        on: &on
+          repo: $TRAVIS_REPO_SLUG
+          tags: true
+          all_branches: true
+          condition: $TAG_BRANCH =~ ^(master)$
     - name: Build iOS
       language: objective-c
       os: osx
@@ -37,23 +49,17 @@ jobs:
       before_deploy: zip -r ${TRAVIS_BUILD_DIR}/build/tns-demo-app.app.zip build/tns-demo-app.app
       skip_cleanup: true
       deploy:
-        provider: script
-        script: npm run build.ios
-        skip_cleanup: true
-        on: &on
-          repo: $TRAVIS_REPO_SLUG
-          tags: true
-          all_branches: true
-          condition: $TAG_BRANCH =~ ^(master)$
-
-deploy:
-  provider: releases
-  api_key: $GITHUB_TOKEN
-  skip_cleanup: true
-  file_glob: true
-  file: build/tns-demo-app.*
-  name: Release $TRAVIS_TAG
-  on: *on
+        - provider: script
+          script: npm run build.ios
+          skip_cleanup: true
+          on: *on
+        - provider: releases
+          api_key: $GITHUB_TOKEN
+          skip_cleanup: true
+          file_glob: true
+          file: build/tns-demo-app.*
+          name: Release $TRAVIS_TAG
+          on: *on
 
 android:
   components:
