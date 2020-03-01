@@ -45,8 +45,7 @@ jobs:
           script: zip -r ${TRAVIS_BUILD_DIR}/build/tns-demo-app.app.zip build/tns-demo-app.app
           skip_cleanup: true
           on: *on
-        - deploy:
-          provider: releases
+        - provider: releases
           api_key: $GITHUB_TOKEN
           skip_cleanup: true
           draft: true
