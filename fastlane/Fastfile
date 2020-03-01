@@ -14,7 +14,7 @@ lane :build do
 
     match(type: "development", readonly: true)
 
-    enable_automatic_code_signing(
+    disable_automatic_code_signing(
       path: './platforms/ios/tnsdemoapp.xcodeproj'
     )
 
@@ -24,6 +24,9 @@ lane :build do
       export_method: "development",
       output_directory: "./build",
       output_name: "tns-demo-app"
+      xcargs: {
+        PROVISIONING_PROFILE_SPECIFIER: ENV["sigh_#{ENV['APP_IDENTIFIER']}_#{signing_type}"]
+      }
     )
 end
 
