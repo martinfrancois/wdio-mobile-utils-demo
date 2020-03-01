@@ -39,3 +39,7 @@ build
 # Fastlane
 fastlane/report.xml
 fastlane/README.md
+
+# dotenv
+!.env.default.template
+/.env*
