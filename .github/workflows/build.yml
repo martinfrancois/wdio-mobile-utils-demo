@@ -68,8 +68,9 @@ jobs:
       - name: Base Setup
         run: npm run ci.base.setup && npm run ci.pip.install && npm run ci.build.ios.setup
 
-      - name: Build iOS
-        run: fastlane ios build
+      - uses: maierj/fastlane-action@v1.4.0
+        with:
+          lane: 'ios build'
         env:
           MATCH_GIT_URL: ${{ secrets.MATCH_GIT_URL }}
           MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
