@@ -39,9 +39,11 @@ jobs:
       osx_image: xcode11.3
       before_script: npm run ci.build.ios.setup
       script: npm run build.ios.sim
+      after_script: zip -r ${TRAVIS_BUILD_DIR}/build/tns-demo-app.app.zip build/tns-demo-app.app
+      skip_cleanup: true
       deploy:
         - provider: script
-          script: bundle exec fastlane ios build
+          script: npm run build.ios
           skip_cleanup: true
           on: *on
         - provider: releases
@@ -49,7 +51,7 @@ jobs:
           skip_cleanup: true
           draft: false
           file:
-            - build/tns-demo-app.app
+            - build/tns-demo-app.app.zip
             - build/tns-demo-app.ipa
           on: *on
 
