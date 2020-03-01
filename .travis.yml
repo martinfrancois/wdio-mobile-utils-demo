@@ -3,7 +3,6 @@ os: osx
 osx_image: xcode11.3
 jdk: oraclejdk8
 before_install:
-  - rvm install 2.7.0
   - nvm install 10
 install:
   - npm run ci.base.setup
