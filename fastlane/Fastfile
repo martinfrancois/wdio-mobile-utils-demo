@@ -13,6 +13,7 @@ lane :build do
     signing_type = "development"
     path_xcodeproj = './platforms/ios/tnsdemoapp.xcodeproj'
     path_xcworkspace = './platforms/ios/tnsdemoapp.xcworkspace'
+    app_identifier = CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier)
 
     sh("tns", "prepare", "ios", "--release", "--clean", "--env.production", "--env.aot", "--env.uglify")
 
