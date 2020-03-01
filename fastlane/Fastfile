@@ -10,22 +10,26 @@ end
 
 desc 'Build the iOS application.'
 lane :build do
+    signing_type = "development"
+    path_xcodeproj = './platforms/ios/tnsdemoapp.xcodeproj'
+    path_xcworkspace = './platforms/ios/tnsdemoapp.xcworkspace'
+
     sh("tns", "prepare", "ios", "--release", "--clean", "--env.production", "--env.aot", "--env.uglify")
 
-    match(type: "development", readonly: true)
+    match(type: signing_type, readonly: true)
 
     disable_automatic_code_signing(
-      path: './platforms/ios/tnsdemoapp.xcodeproj'
+      path: path_xcodeproj
     )
 
     build_app(
       scheme: "tnsdemoapp",
-      workspace: './platforms/ios/tnsdemoapp.xcworkspace',
-      export_method: "development",
+      workspace: path_xcworkspace,
+      export_method: signing_type,
       output_directory: "./build",
       output_name: "tns-demo-app",
       xcargs: {
-        PROVISIONING_PROFILE_SPECIFIER: ENV["sigh_com.github.martinfrancois.demo_development"]
+        PROVISIONING_PROFILE_SPECIFIER: ENV["sigh_com.github.martinfrancois.demo_#{signing_type}"]
       }
     )
 end
