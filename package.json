@@ -18,8 +18,8 @@
     "run.ios": "tns run ios --env.aot",
     "build.android": "tns build android --env.aot --env.uglify --copy-to build/tns-demo-app.apk",
     "build.ios.sim": "tns build ios --env.aot --env.uglify --copy-to build/tns-demo-app.app",
-    "build.ios": "tns build ios --for-device --copy-to build/tns-demo-app.ipa",
-    "archive.ios": "tns prepare ios --release --env.aot --env.uglify && xcodebuild -workspace platforms/ios/tnsdemoapp.xcworkspace -scheme tnsdemoapp -destination generic/platform=iOS -archivePath build/tns-demo-app.xcarchive archive",
+    "build.ios": "fastlane ios build",
+    "dev.build.ios.setup": "fastlane match development",
     "ci.base.setup": "npm i -g typescript && echo no | npm i -g nativescript && tns usage-reporting disable && tns error-reporting disable && npm i && tsc",
     "ci.pip.install": "sudo pip install --upgrade pip && sudo pip install six"
   },
