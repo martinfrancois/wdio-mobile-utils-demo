@@ -13,7 +13,6 @@ install:
   - sudo gem install cocoapods
   - pod setup
 script:
-  - tns doctor
-  - fastlane ios build
+  - bundle exec fastlane ios build
 
 cache: npm
