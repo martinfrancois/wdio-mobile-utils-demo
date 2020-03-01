@@ -25,7 +25,7 @@ lane :build do
       output_directory: "./build",
       output_name: "tns-demo-app"
       xcargs: {
-        PROVISIONING_PROFILE_SPECIFIER: ENV["sigh_#{ENV['APP_IDENTIFIER']}_#{signing_type}"]
+        PROVISIONING_PROFILE_SPECIFIER: ENV["sigh_com.github.martinfrancois.demo_#{signing_type}"]
       }
     )
 end
