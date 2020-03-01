@@ -6,3 +6,5 @@ install:
   - npm run ci.build.ios.setup
 script:
   - fastlane ios build
+
+cache: npm
