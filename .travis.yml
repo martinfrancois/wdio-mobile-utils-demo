@@ -9,9 +9,6 @@ install:
   - npm run ci.base.setup
   - npm run ci.pip.install
   - npm run ci.build.ios.setup
-  - sudo gem install xcodeproj
-  - sudo gem install cocoapods
-  - pod setup
 script:
   - bundle exec fastlane ios build
 
