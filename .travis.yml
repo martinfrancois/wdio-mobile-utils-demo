@@ -1,4 +1,7 @@
-if: tag IS blank
+env:
+  global:
+    # get all the branches referencing this commit
+    - TAG_BRANCH=$(git ls-remote origin | sed -n "\|$TRAVIS_COMMIT\s\+refs/heads/|{s///p}")
 
 before_install:
   - nvm install 10
@@ -18,14 +21,14 @@ cache:
 
 jobs:
   include:
-    - stage: Build Android
+    - name: Build Android
       language: android
       os: linux
       jdk: oraclejdk8
       env:
         - BuildAndroid="28"
       script: npm run build.android
-    - stage: Build iOS
+    - name: Build iOS
       language: objective-c
       os: osx
       osx_image: xcode11.3
@@ -38,19 +41,18 @@ jobs:
         script: npm run build.ios
         skip_cleanup: true
         on: &on
-          branch: master
-
-before_deploy:
-  - export TRAVIS_TAG="preview"
+          repo: $TRAVIS_REPO_SLUG
+          tags: true
+          all_branches: true
+          condition: $TAG_BRANCH =~ ^(master)$
 
 deploy:
   provider: releases
   api_key: $GITHUB_TOKEN
   skip_cleanup: true
-  draft: true
-  overwrite: true
   file_glob: true
   file: build/tns-demo-app.*
+  name: Release $TRAVIS_TAG
   on: *on
 
 android:
