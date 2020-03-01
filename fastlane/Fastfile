@@ -23,7 +23,7 @@ lane :build do
       workspace: './platforms/ios/tnsdemoapp.xcworkspace',
       export_method: "development",
       output_directory: "./build",
-      output_name: "tns-demo-app"
+      output_name: "tns-demo-app",
       xcargs: {
         PROVISIONING_PROFILE_SPECIFIER: ENV["sigh_com.github.martinfrancois.demo_#{signing_type}"]
       }
