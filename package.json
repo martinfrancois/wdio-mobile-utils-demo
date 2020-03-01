@@ -20,6 +20,7 @@
     "build.ios.sim": "tns build ios --env.aot --env.uglify --copy-to build/tns-demo-app.app",
     "build.ios": "fastlane ios build",
     "dev.build.ios.setup": "fastlane match development",
+    "ci.build.ios.setup": "gem install fastlane -NV",
     "ci.base.setup": "npm i -g typescript && echo no | npm i -g nativescript && tns usage-reporting disable && tns error-reporting disable && npm i && tsc",
     "ci.pip.install": "sudo pip install --upgrade pip && sudo pip install six"
   },
