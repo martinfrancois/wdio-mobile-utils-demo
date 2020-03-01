@@ -59,7 +59,6 @@ jobs:
         - provider: releases
           api_key: $GITHUB_TOKEN
           skip_cleanup: true
-          draft: false
           file: build/tns-demo-app.ipa
           on: *on
 
