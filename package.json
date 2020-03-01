@@ -22,7 +22,7 @@
     "dev.build.ios.setup": "bundle exec fastlane match development",
     "dev.ios.setup": "bundle install",
     "ci.build.ios.setup": "gem install xcodeproj cocoapods && pod setup && bundle install",
-    "ci.base.setup": "npm i -g typescript && echo no | npm i -g nativescript && tns usage-reporting disable && tns error-reporting disable && npm i && tsc",
+    "ci.base.setup": "npm i -g typescript@3.5.3 && echo no | npm i -g nativescript@6.4.1 && tns usage-reporting disable && tns error-reporting disable && npm i && tsc",
     "ci.pip.install": "sudo pip install --upgrade pip && sudo pip install six",
     "update.fastlane": "bundle update fastlane"
   },
