@@ -33,8 +33,8 @@ deploy:
     api_key: $GITHUB_TOKEN
     file_glob: true
     file:
-      - /build/tns-demo-app.ipa
-      - /build/tns-demo-app.apk
-      - /build/tns-demo-app.app
+      - build/tns-demo-app.ipa
+      - build/tns-demo-app.apk
+      - build/tns-demo-app.app
     skip_cleanup: true
     on: *on
