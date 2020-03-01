@@ -21,7 +21,7 @@ npm run dev.ios.setup
 
 Then copy the file `.env.default.template` as `.env.default` and fill out the missing environment variables.
 
-# Available Actions
+# Available Commands
 To run anything iOS related, a macOS machine must be used.
 Everything considering Android runs on Windows, Mac or Linux.
 
