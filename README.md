@@ -1,5 +1,21 @@
 tns-demo-app documentation
 ================
+
+# Table of Contents
+- [Installation](#installation)
+  - [Basic Installation](#basic-installation)
+  - [iOS Real Device Build Installation](#ios-real-device-build-installation)
+- [Available Commands](#available-commands)
+  - [Preview app](#preview-app)
+  - [Run app locally](#run-app-locally)
+    - [Android Emulator](#android-emulator)
+    - [iOS Simulator](#ios-simulator)
+  - [Build app locally](#build-app-locally)
+    - [Android](#android)
+    - [iOS Simulator](#ios-simulator-1)
+    - [iOS Real Device](#ios-real-device)
+- [Fastlane Certificates](#fastlane-certificates)
+
 # Installation
 
 Prerequisites:
@@ -32,13 +48,13 @@ npm run preview
 ```
 
 ## Run app locally
-### Android
+### Android Emulator
 To run the app on the Android Emulator, run the following command:
 ```
 npm run run.android
 ```
 
-### iOS
+### iOS Simulator
 To run the app on the iOS Simulator, run the following command:
 ```
 npm run run.ios
