@@ -1,8 +1,3 @@
-env:
-  global:
-    # get all the branches referencing this commit
-    - TAG_BRANCH=$(git ls-remote origin | sed -n "\|$TRAVIS_COMMIT\s\+refs/heads/|{s///p}")
-
 before_install:
   - nvm install 10
 install:
@@ -33,13 +28,11 @@ jobs:
         api_key: $GITHUB_TOKEN
         skip_cleanup: true
         file_glob: true
-        file: build/tns-demo-app.*
+        file: build/tns-demo-app.apk
         name: Release $TRAVIS_TAG
         on: &on
-          repo: $TRAVIS_REPO_SLUG
           tags: true
-          all_branches: true
-          condition: $TAG_BRANCH =~ ^(master)$
+          branch: master
     - name: Build iOS
       language: objective-c
       os: osx
@@ -57,7 +50,9 @@ jobs:
           api_key: $GITHUB_TOKEN
           skip_cleanup: true
           file_glob: true
-          file: build/tns-demo-app.*
+          file:
+            - build/tns-demo-app.ipa
+            - build/tns-demo-app.app.zip
           name: Release $TRAVIS_TAG
           on: *on
 
