@@ -9,7 +9,7 @@ install:
   - npm run ci.pip.install
   - npm run ci.build.ios.setup
 script:
-  - bundle exec fastlane ios build
+  - echo "TODO BUILD"
 
 before_cache:
   - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
@@ -20,3 +20,19 @@ cache:
     - node_modules
     - $HOME/.gradle/caches/
     - $HOME/.gradle/wrapper/
+
+deploy:
+  - provider: script
+    script: bundle exec fastlane ios build
+    skip_cleanup: true
+    on: &on
+      branch: master
+  - provider: releases
+    api_key: $GITHUB_TOKEN
+    file_glob: true
+    file:
+      - /build/tns-demo-app.ipa
+      - /build/tns-demo-app.apk
+      - /build/tns-demo-app.app
+    skip_cleanup: true
+    on: *on
