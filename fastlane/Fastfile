@@ -11,7 +11,7 @@ desc 'Build the iOS application.'
 lane :build do
     sh("tns", "prepare", "ios", "--release", "--clean", "--env.production", "--env.aot", "--env.uglify")
 
-    match(type: "development")
+    match(type: "development", readonly: true)
 
     build_app(
       scheme: "tnsdemoapp",
