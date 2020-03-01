@@ -1,14 +1,17 @@
+language: objective-c
 os: osx
 osx_image: xcode11.3
-language: ruby
-rvm: 2.7.0
 jdk: oraclejdk8
+before_install:
+  - rvm install 2.7.0
   - nvm install 10
 install:
   - npm run ci.base.setup
   - npm run ci.pip.install
   - npm run ci.build.ios.setup
-before_script: pod repo update
+  - sudo gem install xcodeproj
+  - sudo gem install cocoapods
+  - pod setup
 script:
   - fastlane ios build
 
