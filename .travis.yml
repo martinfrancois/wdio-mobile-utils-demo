@@ -1,17 +1,10 @@
 if: tag IS blank
 
-language: objective-c
-os: osx
-osx_image: xcode11.3
-jdk: oraclejdk8
 before_install:
   - nvm install 10
 install:
   - npm run ci.base.setup
   - npm run ci.pip.install
-  - npm run ci.build.ios.setup
-script:
-  - echo "TODO BUILD"
 
 before_cache:
   - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
@@ -23,18 +16,47 @@ cache:
     - $HOME/.gradle/caches/
     - $HOME/.gradle/wrapper/
 
-deploy:
-  - provider: script
-    script: bundle exec fastlane ios build
-    skip_cleanup: true
-    on: &on
-      branch: master
-  - provider: releases
-    api_key: $GITHUB_TOKEN
-    file_glob: true
-    file:
-      - build/tns-demo-app.ipa
-      - build/tns-demo-app.apk
-      - build/tns-demo-app.app
-    skip_cleanup: true
-    on: *on
+jobs:
+  include:
+    - stage: Build Android
+      language: android
+      os: linux
+      jdk: oraclejdk8
+      env:
+        - BuildAndroid="28"
+      script: npm run build.android
+      deploy:
+        provider: releases
+        api_key: $GITHUB_TOKEN
+        skip_cleanup: true
+        draft: true
+        file: build/tns-demo-app.apk
+        on: &on
+          branch: master
+    - stage: Build iOS
+      language: objective-c
+      os: osx
+      osx_image: xcode11.3
+      before_script: npm run ci.build.ios.setup
+      script: npm run build.ios.sim
+      deploy:
+        - provider: script
+          script: bundle exec fastlane ios build
+          skip_cleanup: true
+          on: *on
+        - provider: releases
+          api_key: $GITHUB_TOKEN
+          skip_cleanup: true
+          draft: false
+          file:
+            - build/tns-demo-app.app
+            - build/tns-demo-app.ipa
+          on: *on
+
+android:
+  components:
+    - tools
+    - platform-tools
+    - build-tools-28.0.3
+    - android-28
+    - extra-android-m2repository
