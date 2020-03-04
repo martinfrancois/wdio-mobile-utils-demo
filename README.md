@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.com/martinfrancois/wdio-mobile-utils-demo.svg?token=8WqsSGJvE4SAqmHHx2Z7&branch=master)](https://travis-ci.com/martinfrancois/wdio-mobile-utils-demo)
 
-wdio-mobile-utils-demo documentation
+wdio-mobile-utils Demo App
 ================
 
 # Table of Contents
