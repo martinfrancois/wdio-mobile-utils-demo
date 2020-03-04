@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/martinfrancois/tns-demo-app.svg?token=8WqsSGJvE4SAqmHHx2Z7&branch=master)](https://travis-ci.com/martinfrancois/tns-demo-app)
+
 tns-demo-app documentation
 ================
 
