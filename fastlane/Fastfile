@@ -11,8 +11,8 @@ end
 desc 'Build the iOS application.'
 lane :build do
     signing_type = "development"
-    path_xcodeproj = './platforms/ios/tnsdemoapp.xcodeproj'
-    path_xcworkspace = './platforms/ios/tnsdemoapp.xcworkspace'
+    path_xcodeproj = './platforms/ios/wdiomobileutilsdemo.xcodeproj'
+    path_xcworkspace = './platforms/ios/wdiomobileutilsdemo.xcworkspace'
     app_identifier = CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier)
 
     sh("tns", "prepare", "ios", "--release", "--clean", "--env.production", "--env.aot", "--env.uglify")
@@ -24,11 +24,11 @@ lane :build do
     )
 
     build_app(
-      scheme: "tnsdemoapp",
+      scheme: "wdiomobileutilsdemo",
       workspace: path_xcworkspace,
       export_method: signing_type,
       output_directory: "./build",
-      output_name: "tns-demo-app",
+      output_name: "wdio-mobile-utils-demo",
       xcargs: {
         PROVISIONING_PROFILE_SPECIFIER: ENV["sigh_#{app_identifier}_#{signing_type}"]
       }

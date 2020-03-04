@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.com/martinfrancois/tns-demo-app.svg?token=8WqsSGJvE4SAqmHHx2Z7&branch=master)](https://travis-ci.com/martinfrancois/tns-demo-app)
+[![Build Status](https://travis-ci.com/martinfrancois/wdio-mobile-utils-demo.svg?token=8WqsSGJvE4SAqmHHx2Z7&branch=master)](https://travis-ci.com/martinfrancois/wdio-mobile-utils-demo)
 
-tns-demo-app documentation
+wdio-mobile-utils-demo documentation
 ================
 
 # Table of Contents
@@ -71,7 +71,7 @@ npm run build.android
 
 You will then be able to find the built file in the following path:
 ```
-build/tns-demo-app.apk
+build/wdio-mobile-utils-demo.apk
 ```
 
 ### iOS Simulator
@@ -82,7 +82,7 @@ npm run build.ios.sim
 
 You will then be able to find the built file in the following path:
 ```
-build/tns-demo-app.app
+build/wdio-mobile-utils-demo.app
 ```
 
 ### iOS Real Device
@@ -93,7 +93,7 @@ npm run build.ios
 
 You will then be able to find the built file in the following path:
 ```
-build/tns-demo-app.ipa
+build/wdio-mobile-utils-demo.ipa
 ```
 
 # Fastlane Certificates

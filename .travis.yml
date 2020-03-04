@@ -28,7 +28,7 @@ jobs:
         api_key: $GITHUB_TOKEN
         skip_cleanup: true
         file_glob: true
-        file: build/tns-demo-app.apk
+        file: build/wdio-mobile-utils-demo.apk
         name: Release $TRAVIS_TAG
         on: &on
           tags: true
@@ -39,7 +39,7 @@ jobs:
       osx_image: xcode11.3
       before_script: npm run ci.build.ios.setup
       script: npm run build.ios.sim
-      before_deploy: zip -r ${TRAVIS_BUILD_DIR}/build/tns-demo-app.app.zip build/tns-demo-app.app
+      before_deploy: zip -r ${TRAVIS_BUILD_DIR}/build/wdio-mobile-utils-demo.app.zip build/wdio-mobile-utils-demo.app
       skip_cleanup: true
       deploy:
         - provider: script
@@ -51,8 +51,8 @@ jobs:
           skip_cleanup: true
           file_glob: true
           file:
-            - build/tns-demo-app.ipa
-            - build/tns-demo-app.app.zip
+            - build/wdio-mobile-utils-demo.ipa
+            - build/wdio-mobile-utils-demo.app.zip
           name: Release $TRAVIS_TAG
           on: *on
 
