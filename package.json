@@ -12,7 +12,7 @@
   "license": "Apache-2.0",
   "repository": "<fill-your-repository-here>",
   "scripts": {
-    "lint": "tslint \"src/**/*.ts\"",
+    "lint": "node_modules/.bin/eslint --ext .js,.ts src",
     "preview": "tns preview",
     "run.android": "tns run android --env.aot",
     "run.ios": "tns run ios --env.aot",
@@ -40,15 +40,21 @@
     "reflect-metadata": "~0.1.13",
     "rxjs": "^6.5.4",
     "tns-core-modules": "~6.4.2",
+    "tslint": "^6.0.0",
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
+    "@angular-eslint/builder": "0.0.1-alpha.20",
+    "@angular-eslint/eslint-plugin": "0.0.1-alpha.20",
+    "@angular-eslint/eslint-plugin-template": "0.0.1-alpha.20",
+    "@angular-eslint/template-parser": "0.0.1-alpha.20",
     "@angular/compiler-cli": "~8.2.0",
     "@ngtools/webpack": "~8.2.0",
-    "codelyzer": "~4.5.0",
+    "@typescript-eslint/eslint-plugin": "^2.22.0",
+    "@typescript-eslint/parser": "^2.22.0",
+    "eslint": "^6.8.0",
     "nativescript-dev-webpack": "~1.5.1",
     "node-sass": "^4.13.1",
-    "tslint": "~5.19.0",
     "typescript": "~3.5.3"
   },
   "gitHead": "d8bdf0799a219051f28f8abd7c258d2bf2fce6e1",
