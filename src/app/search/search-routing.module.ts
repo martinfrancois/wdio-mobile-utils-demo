@@ -1,11 +1,11 @@
-import { NgModule } from "@angular/core";
-import { Routes } from "@angular/router";
-import { NativeScriptRouterModule } from "nativescript-angular/router";
+import { NgModule } from '@angular/core';
+import { Routes } from '@angular/router';
+import { NativeScriptRouterModule } from 'nativescript-angular/router';
 
-import { SearchComponent } from "./search.component";
+import { SearchComponent } from './search.component';
 
 const routes: Routes = [
-    { path: "default", component: SearchComponent }
+    { path: 'default', component: SearchComponent }
 ];
 
 @NgModule({
