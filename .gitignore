@@ -42,3 +42,6 @@ fastlane/report.xml
 # dotenv
 !.env.default.template
 /.env*
+
+allure-results
+junit-results
