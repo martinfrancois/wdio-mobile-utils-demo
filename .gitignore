@@ -45,3 +45,4 @@ fastlane/report.xml
 
 allure-results
 junit-results
+allure-report
