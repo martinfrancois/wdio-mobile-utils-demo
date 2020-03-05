@@ -35,7 +35,7 @@
     "e2e.android.run": "cross-env TEST_CONFIG=wdio.android.app.conf run-s e2e.wdio.run e2e.reports.generate",
     "e2e.android.debug": "cross-env DEBUG=true TEST_CONFIG=wdio.android.app.conf run-s e2e.wdio.run e2e.reports.generate",
     "e2e.android.sauce": "cross-env TEST_CONFIG=saucelabs/wdio.android.rdc.app.conf run-s e2e.wdio.run e2e.reports.generate",
-    "e2e.wdio.run": "./node_modules/.bin/wdio ./config/e2e/wdio.conf.js",
+    "e2e.wdio.run": "./node_modules/.bin/wdio ./e2e/config/wdio.conf.js",
     "e2e.reports.generate": "allure generate allure-results --clean"
   },
   "dependencies": {
