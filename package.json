@@ -63,6 +63,7 @@
     "@wdio/spec-reporter": "^5.18.7",
     "@wdio/sync": "^5.18.7",
     "allure-commandline": "^2.13.0",
+    "cross-env": "^7.0.2",
     "eslint": "^6.8.0",
     "nativescript-dev-webpack": "~1.5.1",
     "node-sass": "^4.13.1",
