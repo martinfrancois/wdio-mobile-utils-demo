@@ -1,0 +1,14 @@
+package.json
+package-lock.json
+nsconfig.json
+tsfmt.json
+.idea
+.vscode
+App_Resources
+fastlane
+hooks
+platforms
+node_modules
+webpack.config.js
+Gemfile
+Gemfile.lock
