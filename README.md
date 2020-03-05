@@ -28,13 +28,13 @@ Prerequisites:
 
 ## Basic Installation
 Run the following command:
-```
+```shell script
 npm install
 ```
 
 ## iOS Real Device Build Installation
 To be able to build an IPA file for deployment on real iOS devices, run the following command:
-```
+```shell script
 npm run dev.ios.setup
 ```
 
@@ -46,60 +46,60 @@ Everything considering Android runs on Windows, Mac or Linux.
 
 ## Preview app
 To preview the app on a real device using NativeScript's preview app, run the following command:
-```
+```shell script
 npm run preview
 ```
 
 ## Run app locally
 ### Android Emulator
 To run the app on the Android Emulator, run the following command:
-```
+```shell script
 npm run run.android
 ```
 
 ### iOS Simulator
 To run the app on the iOS Simulator, run the following command:
-```
+```shell script
 npm run run.ios
 ```
 
 ## Build app locally
 ### Android
 To build the app as an .apk file, run the following command:
-```
+```shell script
 npm run build.android
 ```
 
 You will then be able to find the built file in the following path:
-```
+```shell script
 build/wdio-mobile-utils-demo.apk
 ```
 
 ### iOS Simulator
 To build the app as an .app file to install on an iOS Simulator, run the following command:
-```
+```shell script
 npm run build.ios.sim
 ```
 
 You will then be able to find the built file in the following path:
-```
+```shell script
 build/wdio-mobile-utils-demo.app
 ```
 
 ### iOS Real Device
 To build the app as an .ipa file to install on a real iOS device, run the following command:
-```
+```shell script
 npm run build.ios
 ```
 
 You will then be able to find the built file in the following path:
-```
+```shell script
 build/wdio-mobile-utils-demo.ipa
 ```
 
 # Fastlane Certificates
 To install or update iOS developer certificates using fastlane, run the following command:
-```
+```shell script
 npm run dev.build.ios.setup
 ```
 
