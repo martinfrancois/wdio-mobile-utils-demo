@@ -89,5 +89,13 @@
     "webdriverio": "^5.18.7"
   },
   "gitHead": "d8bdf0799a219051f28f8abd7c258d2bf2fce6e1",
-  "readme": "NativeScript Application"
+  "readme": "NativeScript Application",
+  "prettier": {
+    "singleQuote": true
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  }
 }
