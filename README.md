@@ -17,6 +17,7 @@ wdio-mobile-utils Demo App
     - [iOS Simulator](#ios-simulator-1)
     - [iOS Real Device](#ios-real-device)
 - [Fastlane Certificates](#fastlane-certificates)
+- [Release](#release)
 
 # Installation
 
@@ -100,4 +101,14 @@ build/wdio-mobile-utils-demo.ipa
 To install or update iOS developer certificates using fastlane, run the following command:
 ```
 npm run dev.build.ios.setup
+```
+
+# Release
+To build a release, create a git tag on the master branch with the version number (in the format x.y.z) and push it.
+Travis CI will then take care of the rest and publish a release on GitHub releases.
+
+Example:
+```shell script
+git tag 1.0.0
+git push --tags
 ```
