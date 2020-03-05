@@ -10,7 +10,6 @@ export interface DataItem {
     providedIn: 'root'
 })
 export class DataService {
-
     private items = new Array<DataItem>(
         {
             id: 1,
@@ -119,6 +118,6 @@ export class DataService {
     }
 
     getItem(id: number): DataItem {
-        return this.items.filter((item) => item.id === id)[0];
+        return this.items.filter(item => item.id === id)[0];
     }
 }

@@ -15,7 +15,7 @@ export class ItemDetailComponent implements OnInit {
         private _data: DataService,
         private _route: ActivatedRoute,
         private _routerExtensions: RouterExtensions
-    ) { }
+    ) {}
 
     ngOnInit(): void {
         const id = +this._route.snapshot.params.id;
