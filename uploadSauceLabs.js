@@ -1,5 +1,5 @@
-// Usage: node uploadSauceLabsRunTests appPath
-// Example: node uploadSauceLabsRunTests build/wdio-mobile-utils-demo.apk
+// Usage: node uploadSauceLabs.js appPath
+// Example: node uploadSauceLabs.js build/wdio-mobile-utils-demo.apk
 
 var axios = require('axios');
 var fs = require('fs');
