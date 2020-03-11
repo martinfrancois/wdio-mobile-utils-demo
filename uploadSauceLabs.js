@@ -13,8 +13,13 @@ var appExtension = appPath
   .pop()
   .toLowerCase(); // apk for Android, ipa for iOS
 
-// Determine which API key to use for Sauce Labs (Android or iOS)
+var appName = appPath.split('/');
+appName = appName[appName.length - 1]; // last part after last / is filename
+
+// Determine which data (API key, endpoint URL) to use for Sauce Labs (Android, iOS, iOS Simulator)
 var apiKey;
+var endpointUrl = 'https://app.testobject.com:443/api/storage/upload'; // is only different for iOS Simulator
+
 if (appExtension === 'apk') {
   // Android
   console.log('Uploading App on Android');
@@ -23,9 +28,20 @@ if (appExtension === 'apk') {
   // iOS
   console.log('Uploading App on iOS');
   apiKey = process.env.SAUCE_RDC_EU_ACCESS_KEY_IOS;
+} else if (appExtension === 'zip') {
+  console.log('Uploading App on iOS Simulator');
+  apiKey = process.env.SAUCE_ACCESS_KEY;
+  endpointUrl =
+    'https://eu-central-1.saucelabs.com/rest/v1/storage/' +
+    process.env.SAUCE_USERNAME +
+    '/' +
+    appName +
+    '?overwrite=true';
 } else {
-  console.err(
-    'File extension of app is invalid. Has to be an apk or ipa file.'
+  console.error(
+    "File extension '" +
+      appExtension +
+      "' is invalid. Has to be an apk, ipa or app.zip file."
   );
   process.exit(1);
 }
@@ -48,14 +64,18 @@ var options = {
 
 // upload file to sauce labs
 axios
-  .post(
-    'https://app.testobject.com:443/api/storage/upload',
-    fileBuffer,
-    options
-  )
+  .post(endpointUrl, fileBuffer, options)
   .then(function(response) {
     if (response.status === 200) {
-      console.log('Successfully uploaded with appId: ' + response.data);
+      if (typeof response.data === 'object') {
+        // Sauce Storage Upload
+        console.log(
+          'Successfully uploaded with filename: ' + response.data.filename
+        );
+      } else {
+        // RDC Upload
+        console.log('Successfully uploaded with appId: ' + response.data);
+      }
       process.exit(0);
     } else {
       console.log('Unexpected status code: ' + JSON.stringify(response));
