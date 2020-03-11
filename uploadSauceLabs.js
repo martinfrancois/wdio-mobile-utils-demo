@@ -14,7 +14,16 @@ var appExtension = appPath
   .toLowerCase(); // apk for Android, ipa for iOS
 
 var appName = appPath.split('/');
-appName = appName[appName.length - 1]; // last part after last / is filename
+if (appName.length > 1) {
+  // file is in a subfolder
+  appName = appName[appName.length - 1]; // last part after last / is filename
+} else if (appName.length === 1) {
+  // file is top level
+  appName = appName[0];
+} else {
+  console.error("File name '" + appName + "' for app is invalid.");
+  process.exit(1);
+}
 
 // Determine which data (API key, endpoint URL) to use for Sauce Labs (Android, iOS, iOS Simulator)
 var apiKey;
