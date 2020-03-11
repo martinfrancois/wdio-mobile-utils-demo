@@ -74,6 +74,7 @@
     "@wdio/spec-reporter": "^5.18.7",
     "@wdio/sync": "^5.18.7",
     "allure-commandline": "^2.13.0",
+    "axios": "^0.19.2",
     "cross-env": "^7.0.2",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.0",
