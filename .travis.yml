@@ -24,15 +24,19 @@ jobs:
         - BuildAndroid="28"
       script: npm run build.android
       deploy:
-        provider: releases
-        api_key: $GITHUB_TOKEN
-        skip_cleanup: true
-        file_glob: true
-        file: build/wdio-mobile-utils-demo.apk
-        name: Release $TRAVIS_TAG
-        on: &on
-          tags: true
-          branch: master
+        - provider: releases
+          api_key: $GITHUB_TOKEN
+          skip_cleanup: true
+          file_glob: true
+          file: build/wdio-mobile-utils-demo.apk
+          name: Release $TRAVIS_TAG
+          on: &on
+            tags: true
+            branch: master
+        - provider: script
+          script: npm run e2e.android.upload.sauce
+          skip_cleanup: true
+          on: *on
     - name: Build iOS
       language: objective-c
       os: osx
@@ -54,6 +58,14 @@ jobs:
             - build/wdio-mobile-utils-demo.ipa
             - build/wdio-mobile-utils-demo.app.zip
           name: Release $TRAVIS_TAG
+          on: *on
+        - provider: script
+          script: npm run e2e.ios.sim.upload.sauce
+          skip_cleanup: true
+          on: *on
+        - provider: script
+          script: npm run e2e.ios.real.upload.sauce
+          skip_cleanup: true
           on: *on
 
 android:
