@@ -22,14 +22,14 @@ var endpointUrl = 'https://app.testobject.com:443/api/storage/upload'; // is onl
 
 if (appExtension === 'apk') {
   // Android
-  console.log('Uploading App on Android');
+  console.log('Uploading App for Android');
   apiKey = process.env.SAUCE_RDC_EU_ACCESS_KEY_ANDROID;
 } else if (appExtension === 'ipa') {
   // iOS
-  console.log('Uploading App on iOS');
+  console.log('Uploading App for iOS');
   apiKey = process.env.SAUCE_RDC_EU_ACCESS_KEY_IOS;
 } else if (appExtension === 'zip') {
-  console.log('Uploading App on iOS Simulator');
+  console.log('Uploading App for iOS Simulator');
   apiKey = process.env.SAUCE_ACCESS_KEY;
   endpointUrl =
     'https://eu-central-1.saucelabs.com/rest/v1/storage/' +
