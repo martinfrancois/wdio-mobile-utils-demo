@@ -17,6 +17,10 @@
     - [Android](#android)
     - [iOS Simulator](#ios-simulator-1)
     - [iOS Real Device](#ios-real-device)
+  - [Run E2E Tests](#run-e2e-tests)
+    - [Android](#android-1)
+    - [iOS Simulator](#ios-simulator-2)
+    - [iOS Real Device](#ios-real-device-1)
 - [Fastlane Certificates](#fastlane-certificates)
 - [Release](#release)
 
@@ -125,6 +129,34 @@ You will then be able to find the built file in the following path:
 
 ```shell script
 build/wdio-mobile-utils-demo.ipa
+```
+
+## Run E2E Tests
+
+To run the E2E tests using WebdriverIO, run the following commands depending on the type.
+
+### Android
+
+```shell script
+npm run e2e.android.run           # Runs the test locally
+npm run e2e.android.debug         # Runs the test locally in debug mode
+npm run e2e.android.sauce         # Runs the test on Sauce Labs RDC
+```
+
+### iOS Simulator
+
+```shell script
+npm run e2e.ios.sim.run           # Runs the test locally
+npm run e2e.ios.sim.debug         # Runs the test locally in debug mode
+npm run e2e.ios.sim.sauce         # Runs the test on Sauce Labs Virtual Devices
+```
+
+### iOS Real Device
+
+```shell script
+npm run e2e.ios.real.run           # Runs the test locally
+npm run e2e.ios.real.debug         # Runs the test locally in debug mode
+npm run e2e.ios.real.sauce         # Runs the test on Sauce Labs RDC
 ```
 
 # Fastlane Certificates
