@@ -59,7 +59,7 @@ config.capabilities = [
 // - automatically update the job status in the RDC cloud
 // - automatically default to the US RDC cloud
 config.services = ['sauce'];
-config.region = 'eu';
+config.region = process.env.SAUCE_REGION;
 config.user = process.env.SAUCE_USERNAME;
 config.key = process.env.SAUCE_ACCESS_KEY;
 
