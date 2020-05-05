@@ -22,6 +22,10 @@
     - [iOS Simulator](#ios-simulator-2)
     - [iOS Real Device](#ios-real-device-1)
 - [Fastlane Certificates](#fastlane-certificates)
+- [Upload App to Sauce Labs](#upload-app-to-sauce-labs)
+  - [Android RDC](#android-rdc)
+  - [iOS RDC](#ios-rdc)
+  - [iOS Simulator](#ios-simulator-3)
 - [Release](#release)
 
 # Installation
