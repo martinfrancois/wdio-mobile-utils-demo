@@ -8,7 +8,7 @@
   - [Basic Installation](#basic-installation)
   - [iOS Real Device Build Installation](#ios-real-device-build-installation)
   - [Setup Tests to run locally](#setup-tests-to-run-locally)
-  - [Setup Tests on Sauce Labs](#setup-tests-on-sauce-labs)
+  - [Setup Tests to run on Sauce Labs](#setup-tests-to-run-on-sauce-labs)
 - [Available Commands](#available-commands)
   - [Preview app](#preview-app)
   - [Run app locally](#run-app-locally)
@@ -72,7 +72,7 @@ Now you should be able to run Appium like this:
 appium
 ```
 
-## Setup Tests on Sauce Labs
+## Setup Tests to run on Sauce Labs
 
 To be able to run the E2E tests on Sauce Labs, a few environment variables need to be set.
 
