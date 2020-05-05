@@ -156,6 +156,8 @@ build/wdio-mobile-utils-demo.ipa
 
 To run the E2E tests using WebdriverIO, run the following commands depending on the type.
 
+Make sure to check the corresponding config files inside `/e2e/config/` and match the `deviceName` and `platformVersion` you use.
+
 ### Android
 
 ```shell script
