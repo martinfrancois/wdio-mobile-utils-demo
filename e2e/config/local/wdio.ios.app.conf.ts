@@ -15,6 +15,7 @@ config.specs = ['./e2e/specs/**/*.spec.ts'];
 // http://appium.io/docs/en/writing-running-appium/caps/#general-capabilities
 config.capabilities = [
     {
+        automationName: 'XCUITest',
         // The defaults you need to have in your config
         deviceName: 'iPhone 8',
         platformName: 'iOS',
