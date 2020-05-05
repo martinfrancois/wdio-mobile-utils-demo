@@ -148,7 +148,7 @@ npm run e2e.android.sauce         # Runs the test on Sauce Labs RDC
 ```shell script
 npm run e2e.ios.sim.run           # Runs the test locally
 npm run e2e.ios.sim.debug         # Runs the test locally in debug mode
-npm run e2e.ios.sim.sauce         # Runs the test on Sauce Labs Virtual Devices
+npm run e2e.ios.sim.sauce         # Runs the test on Sauce Labs Virtual Cloud
 ```
 
 ### iOS Real Device
