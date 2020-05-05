@@ -10,7 +10,7 @@
   },
   "description": "Cross-platform NativeScript Application",
   "license": "Apache-2.0",
-  "repository": "<fill-your-repository-here>",
+  "repository": "https://github.com/martinfrancois/wdio-mobile-utils-demo",
   "scripts": {
     "lint": "node_modules/.bin/eslint --ext .js,.ts src",
     "preview": "tns preview",
