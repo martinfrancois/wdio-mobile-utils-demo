@@ -32,7 +32,7 @@ var endpointUrl = 'https://app.testobject.com:443/api/storage/upload'; // is onl
 if (appExtension === 'apk') {
   // Android
   console.log('Uploading App for Android');
-  apiKey = process.env.SAUCE_RDC_EU_ACCESS_KEY_ANDROID;
+  apiKey = process.env.SAUCE_RDC_ACCESS_KEY_ANDROID;
 } else if (appExtension === 'ipa') {
   // iOS
   console.log('Uploading App for iOS');
