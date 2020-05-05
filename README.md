@@ -160,6 +160,8 @@ Make sure to check the corresponding config files inside `/e2e/config/` and matc
 
 ### Android
 
+If you want to run the tests locally on an Emulator, make sure it is running before running any of the following commands!
+
 ```shell script
 npm run e2e.android.run           # Runs the test locally
 npm run e2e.android.debug         # Runs the test locally in debug mode
