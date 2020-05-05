@@ -7,6 +7,7 @@
 - [Installation](#installation)
   - [Basic Installation](#basic-installation)
   - [iOS Real Device Build Installation](#ios-real-device-build-installation)
+  - [Setup Tests to run locally](#setup-tests-to-run-locally)
   - [Setup Tests on Sauce Labs](#setup-tests-on-sauce-labs)
 - [Available Commands](#available-commands)
   - [Preview app](#preview-app)
@@ -53,6 +54,22 @@ npm run dev.ios.setup
 ```
 
 Then copy the file `.env.default.template` as `.env.default` and fill out the missing environment variables in the section `# iOS Real Device Build`.
+
+## Setup Tests to run locally
+
+To be able to run the E2E tests locally, you need to have Appium installed and running before running any of the testing commands below.
+
+To install Appium globally using npm, run the following command:
+
+```shell script
+npm i -g appium@latest
+```
+
+Now you should be able to run Appium like this:
+
+```shell script
+appium
+```
 
 ## Setup Tests on Sauce Labs
 
