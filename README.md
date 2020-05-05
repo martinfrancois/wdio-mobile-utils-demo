@@ -22,6 +22,7 @@
     - [Android](#android-1)
     - [iOS Simulator](#ios-simulator-2)
     - [iOS Real Device](#ios-real-device-1)
+    - [Android & iOS Simultaneously](#android---ios-simultaneously)
 - [Fastlane Certificates](#fastlane-certificates)
 - [Upload App to Sauce Labs](#upload-app-to-sauce-labs)
   - [Android RDC](#android-rdc)
@@ -182,6 +183,18 @@ npm run e2e.ios.sim.sauce         # Runs the test on Sauce Labs Virtual Cloud
 npm run e2e.ios.real.run           # Runs the test locally
 npm run e2e.ios.real.debug         # Runs the test locally in debug mode
 npm run e2e.ios.real.sauce         # Runs the test on Sauce Labs RDC
+```
+
+### Android & iOS Simultaneously
+
+To run the tests on both Android and iOS at the same time in parallel, run one the following commands.
+
+If you want to run the tests locally on an Android Emulator, make sure it is running before running any of the following commands!
+
+```shell script
+npm run e2e.multiplatform.run           # Runs the test locally on Android Emulator and iOS Simulator
+npm run e2e.multiplatform.debug         # Runs the test locally on Android Emulator and iOS Simulator in debug mode
+npm run e2e.multiplatform.sauce         # Runs the test on Sauce Labs RDC on both Android and iOS
 ```
 
 # Fastlane Certificates
