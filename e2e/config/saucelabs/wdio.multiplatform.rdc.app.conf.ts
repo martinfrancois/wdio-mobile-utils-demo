@@ -32,7 +32,7 @@ config.capabilities = [
     },
     {
         // The api key that has a reference to the app-project in the TO cloud
-        testobject_api_key: process.env.SAUCE_RDC_EU_ACCESS_KEY_IOS,
+        testobject_api_key: process.env.SAUCE_RDC_ACCESS_KEY_IOS,
         // The name of the test for in the cloud
         testobject_test_name: 'wdio-mobile-utils-demo-iOS',
         // Some default settings

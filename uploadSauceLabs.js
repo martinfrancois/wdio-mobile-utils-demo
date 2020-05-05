@@ -36,7 +36,7 @@ if (appExtension === 'apk') {
 } else if (appExtension === 'ipa') {
   // iOS
   console.log('Uploading App for iOS');
-  apiKey = process.env.SAUCE_RDC_EU_ACCESS_KEY_IOS;
+  apiKey = process.env.SAUCE_RDC_ACCESS_KEY_IOS;
 } else if (appExtension === 'zip') {
   console.log('Uploading App for iOS Simulator');
   apiKey = process.env.SAUCE_ACCESS_KEY;
