@@ -135,6 +135,28 @@ To install or update iOS developer certificates using fastlane, run the followin
 npm run dev.build.ios.setup
 ```
 
+# Upload App to Sauce Labs
+
+To upload the built app to Sauce Labs, use the following commands depending on the type.
+
+## Android RDC
+
+```shell script
+npm run e2e.android.upload.sauce
+```
+
+## iOS RDC
+
+```shell script
+npm run e2e.ios.real.upload.sauce
+```
+
+## iOS Simulator
+
+```shell script
+npm run e2e.ios.sim.upload.sauce
+```
+
 # Release
 
 To build a release, create a git tag on the master branch with the version number (in the format x.y.z) and push it.
