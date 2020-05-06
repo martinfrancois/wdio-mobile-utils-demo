@@ -22,7 +22,7 @@ jobs:
       jdk: oraclejdk8
       env:
         - BuildAndroid="28"
-      script: npm run build.android
+      script: npm run ci.android.push
       deploy:
         - provider: releases
           api_key: $GITHUB_TOKEN
@@ -33,21 +33,17 @@ jobs:
           on: &on
             tags: true
             branch: master
-        - provider: script
-          script: npm run e2e.android.upload.sauce
-          skip_cleanup: true
-          on: *on
     - name: Build iOS
       language: objective-c
       os: osx
       osx_image: xcode11.3
       before_script: npm run ci.build.ios.setup
-      script: npm run build.ios.sim
+      script: npm run ci.ios.push
       before_deploy: zip -r ${TRAVIS_BUILD_DIR}/build/wdio-mobile-utils-demo.app.zip build/wdio-mobile-utils-demo.app
       skip_cleanup: true
       deploy:
         - provider: script
-          script: npm run build.ios
+          script: npm run build.ios.sim
           skip_cleanup: true
           on: *on
         - provider: releases
@@ -61,10 +57,6 @@ jobs:
           on: *on
         - provider: script
           script: npm run e2e.ios.sim.upload.sauce
-          skip_cleanup: true
-          on: *on
-        - provider: script
-          script: npm run e2e.ios.real.upload.sauce
           skip_cleanup: true
           on: *on
 
