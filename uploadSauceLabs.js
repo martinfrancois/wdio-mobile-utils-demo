@@ -28,27 +28,29 @@ if (appName.length > 1) {
   process.exit(1);
 }
 
-// Determine which data (API key, endpoint URL) to use for Sauce Labs (Android, iOS, iOS Simulator)
-var apiKey;
-var endpointUrl = 'https://app.testobject.com:443/api/storage/upload'; // is only different for iOS Simulator
+// Determine which data endpoint URL to use for Sauce Labs (Android RDC, iOS RDC, iOS Simulator)
+var apiKey = process.env.SAUCE_ACCESS_KEY;
+var endpoint;
+
+if (process.env.SAUCE_REGION === 'us') {
+  endpoint = 'app.saucelabs.com';
+} else if (process.env.SAUCE_REGION === 'eu') {
+  endpoint = 'app.eu-central-1.saucelabs.com';
+}
 
 if (appExtension === 'apk') {
   // Android
   console.log('Uploading App for Android');
-  apiKey = process.env.SAUCE_RDC_ACCESS_KEY_ANDROID;
 } else if (appExtension === 'ipa') {
   // iOS
   console.log('Uploading App for iOS');
-  apiKey = process.env.SAUCE_RDC_ACCESS_KEY_IOS;
 } else if (appExtension === 'zip') {
   console.log('Uploading App for iOS Simulator');
-  apiKey = process.env.SAUCE_ACCESS_KEY;
-  endpointUrl =
-    'https://eu-central-1.saucelabs.com/rest/v1/storage/' +
-    process.env.SAUCE_USERNAME +
-    '/' +
-    appName +
-    '?overwrite=true';
+  if (process.env.SAUCE_REGION === 'us') {
+    endpoint = 'saucelabs.com';
+  } else if (process.env.SAUCE_REGION === 'eu') {
+    endpoint = 'eu-central-1.saucelabs.com';
+  }
 } else {
   console.error(
     "File extension '" +
@@ -57,6 +59,15 @@ if (appExtension === 'apk') {
   );
   process.exit(1);
 }
+
+var endpointUrl =
+  'https://' +
+  endpoint +
+  '/rest/v1/storage/' +
+  process.env.SAUCE_USERNAME +
+  '/' +
+  appName +
+  '?overwrite=true';
 
 var fileBuffer = fs.readFileSync(appPath);
 
@@ -85,8 +96,8 @@ axios
           'Successfully uploaded with filename: ' + response.data.filename
         );
       } else {
-        // RDC Upload
-        console.log('Successfully uploaded with appId: ' + response.data);
+        console.log('Unexpected response: ' + JSON.stringify(response));
+        process.exit(1);
       }
       process.exit(0);
     } else {

@@ -113,19 +113,7 @@ const config: WebdriverIO.Config = {
     },
     // Gets executed after all workers got shut down and the process is about to exit. An error
     // thrown in the onComplete hook will result in the test run failing.
-    onComplete: function(exitCode, config, capabilities, results) {},
-    processSauceCapabilities(capabilities) {
-        console.log('Running test on app with latest version');
-
-        const testName = getTestName();
-        console.log('Sauce Labs Test Name: ' + testName);
-
-        capabilities.map(capability => {
-            capability.testobject_test_name = testName;
-        });
-
-        return capabilities;
-    }
+    onComplete: function(exitCode, config, capabilities, results) {}
 };
 
 export { config };

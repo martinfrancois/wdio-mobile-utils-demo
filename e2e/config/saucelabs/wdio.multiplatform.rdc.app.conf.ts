@@ -13,35 +13,36 @@ config.specs = ['./e2e/specs/**/*.spec.ts'];
 // http://appium.io/docs/en/writing-running-appium/caps/#general-capabilities
 config.capabilities = [
     {
-        automationName: 'UiAutomator2',
-        // The reference to the app
-        // The api key that has a reference to the app-project in the TO cloud
-        testobject_api_key: process.env.SAUCE_RDC_ACCESS_KEY_ANDROID,
-        // The name of the test for in the cloud
-        testobject_test_name: 'wdio-mobile-utils-demo-Android',
+        automationName: 'XCUITest',
         // Some default settings
         // You can find more info in the TO Appium Basic Setup section
-        platformName: 'Android',
-        platformVersion: '7',
+        platformName: 'iOS',
+        platformVersion: '12',
+        printPageSourceOnFindFailure: true,
         idleTimeout: 180,
         noReset: true,
         orientation: 'PORTRAIT',
         newCommandTimeout: 180,
         phoneOnly: true,
-        tabletOnly: false
+        tabletOnly: false,
+        autoDismissAlerts: false,
+        deviceName: 'iPhone .*',
+        app: 'sauce-storage:wdio-mobile-utils-demo.ipa',
+        // fix for "Remote debugger not connected" see: https://github.com/appium/appium/issues/12344
+        safariGarbageCollect: false,
+        showSafariNetworkLog: false,
+        maxInstances: 5
     },
     {
-        automationName: 'XCUITest',
-        // The api key that has a reference to the app-project in the TO cloud
-        testobject_api_key: process.env.SAUCE_RDC_ACCESS_KEY_IOS,
-        // The name of the test for in the cloud
-        testobject_test_name: 'wdio-mobile-utils-demo-iOS',
+        automationName: 'UiAutomator2',
+        deviceName: 'Samsung.*Galaxy.*',
         // Some default settings
         // You can find more info in the TO Appium Basic Setup section
-        platformName: 'iOS',
-        platformVersion: '10',
+        platformName: 'Android',
+        platformVersion: '9',
         idleTimeout: 180,
         noReset: true,
+        app: 'sauce-storage:wdio-mobile-utils-demo.apk',
         orientation: 'PORTRAIT',
         newCommandTimeout: 180,
         phoneOnly: true,
@@ -60,5 +61,7 @@ config.capabilities = config.processSauceCapabilities(config.capabilities);
 // - automatically default to the US RDC cloud
 config.services = ['sauce'];
 config.region = process.env.SAUCE_REGION;
+config.user = process.env.SAUCE_USERNAME;
+config.key = process.env.SAUCE_ACCESS_KEY;
 
 exports.config = config;

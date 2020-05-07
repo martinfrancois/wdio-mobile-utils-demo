@@ -14,17 +14,14 @@ config.specs = ['./e2e/specs/**/*.spec.ts'];
 config.capabilities = [
     {
         automationName: 'UiAutomator2',
-        // The reference to the app
-        // The api key that has a reference to the app-project in the TO cloud
-        testobject_api_key: process.env.SAUCE_RDC_ACCESS_KEY_ANDROID,
-        // The name of the test for in the cloud
-        testobject_test_name: 'wdio-mobile-utils-demo',
+        deviceName: 'Samsung.*Galaxy.*',
         // Some default settings
         // You can find more info in the TO Appium Basic Setup section
         platformName: 'Android',
         platformVersion: '9',
         idleTimeout: 180,
         noReset: true,
+        app: 'sauce-storage:wdio-mobile-utils-demo.apk',
         orientation: 'PORTRAIT',
         newCommandTimeout: 180,
         phoneOnly: true,
@@ -32,8 +29,6 @@ config.capabilities = [
         maxInstances: 5
     }
 ];
-
-config.capabilities = config.processSauceCapabilities(config.capabilities);
 
 // =========================
 // Sauce RDC specific config
@@ -43,5 +38,7 @@ config.capabilities = config.processSauceCapabilities(config.capabilities);
 // - automatically default to the US RDC cloud
 config.services = ['sauce'];
 config.region = process.env.SAUCE_REGION;
+config.user = process.env.SAUCE_USERNAME;
+config.key = process.env.SAUCE_ACCESS_KEY;
 
 exports.config = config;
