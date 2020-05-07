@@ -1,6 +1,9 @@
 // Usage: node uploadSauceLabs.js appPath
 // Example: node uploadSauceLabs.js build/wdio-mobile-utils-demo.apk
 
+var path = require('path');
+require('dotenv').config({ path: path.resolve(process.cwd(), '.env.default') });
+
 var axios = require('axios');
 var fs = require('fs');
 
