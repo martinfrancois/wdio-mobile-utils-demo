@@ -18,7 +18,7 @@
     "run.ios": "tns run ios --env.aot",
     "build.android": "tns build android --env.aot --env.uglify --copy-to build/wdio-mobile-utils-demo.apk",
     "build.ios.sim": "tns build ios --env.aot --env.uglify --copy-to build/wdio-mobile-utils-demo.app",
-    "build.ios": "bundle exec fastlane ios build",
+    "build.ios": "cross-env LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 bundle exec fastlane ios build",
     "dev.build.ios.setup": "bundle exec fastlane match development",
     "dev.ios.setup": "bundle install",
     "ci.build.ios.setup": "bundle install",
