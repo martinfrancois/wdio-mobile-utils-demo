@@ -25,11 +25,13 @@
 			android:name="com.tns.NativeScriptActivity"
 			android:label="@string/title_activity_kimera"
 			android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout|locale|uiMode"
-			android:theme="@style/LaunchScreenTheme">
+			android:theme="@style/LaunchScreenTheme"
+			android:launchMode="singleTask">
 
 			<meta-data android:name="SET_THEME_ON_LAUNCH" android:resource="@style/AppTheme" />
 
 			<intent-filter>
+				<data android:scheme="demodeeplink" />
 				<action android:name="android.intent.action.MAIN" />
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>

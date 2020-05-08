@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppURL, handleOpenURL } from 'nativescript-urlhandler';
 
 @Component({
     selector: 'ns-app',
@@ -9,7 +10,9 @@ export class AppComponent implements OnInit {
         // Use the component constructor to inject providers.
     }
 
-    ngOnInit(): void {
-        // Init your component properties here.
+    ngOnInit() {
+        handleOpenURL((appURL: AppURL) => {
+            console.log('Got the following appURL: ', appURL);
+        });
     }
 }

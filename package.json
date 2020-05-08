@@ -60,6 +60,7 @@
     "@angular/router": "~8.2.0",
     "@nativescript/theme": "~2.3.2",
     "nativescript-angular": "~8.21.0",
+    "nativescript-urlhandler": "^1.3.0",
     "reflect-metadata": "~0.1.13",
     "rxjs": "^6.5.4",
     "tns-core-modules": "~6.4.2",
