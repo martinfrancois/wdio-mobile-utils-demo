@@ -137,9 +137,6 @@ module.exports = {
          * Needs import plugin
          */
 
-        // ORIGINAL tslint.json -> "quotemark": [true, "single"],
-        quotes: ['error', 'single'],
-
         // ORIGINAL tslint.json -> "trailing-comma": false,
         'comma-dangle': 'off',
 
