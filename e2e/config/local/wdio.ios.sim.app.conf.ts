@@ -24,8 +24,9 @@ config.capabilities = [
         maxInstances: 1,
         printPageSourceOnFindFailure: true,
         // The path to the app
-        app: join(process.cwd(), './build/wdio-mobile-utils-demo.zip'),
-        //app: 'com.github.martinfrancois.demo',
+        app: process.env.INSTALL
+            ? join(process.cwd(), './build/wdio-mobile-utils-demo.app')
+            : 'com.github.martinfrancois.demo',
         // Read the reset strategies very well, they differ per platform, see
         // http://appium.io/docs/en/writing-running-appium/other/reset-strategies/
         noReset: true,

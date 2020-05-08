@@ -172,8 +172,9 @@ npm run e2e.android.sauce         # Runs the test on Sauce Labs RDC
 ### iOS Simulator
 
 ```shell script
-npm run e2e.ios.sim.run           # Runs the test locally
-npm run e2e.ios.sim.debug         # Runs the test locally in debug mode
+npm run e2e.ios.sim.install       # Runs the test locally and installs the app
+npm run e2e.ios.sim.run           # Runs the test locally using the already installed app
+npm run e2e.ios.sim.debug         # Runs the test locally using the already installed app in debug mode
 npm run e2e.ios.sim.sauce         # Runs the test on Sauce Labs Virtual Cloud
 ```
 
@@ -182,8 +183,9 @@ npm run e2e.ios.sim.sauce         # Runs the test on Sauce Labs Virtual Cloud
 To run E2E tests on real iOS devices locally, remember after connecting the device to your Mac to enable UI automation in the developer settings on the device.
 
 ```shell script
-npm run e2e.ios.real.run           # Runs the test locally
-npm run e2e.ios.real.debug         # Runs the test locally in debug mode
+npm run e2e.ios.real.install       # Runs the test locally and installs the app
+npm run e2e.ios.real.run           # Runs the test locally using the already installed app
+npm run e2e.ios.real.debug         # Runs the test locally using the already installed app in debug mode
 npm run e2e.ios.real.sauce         # Runs the test on Sauce Labs RDC
 ```
 
