@@ -17,20 +17,23 @@ config.capabilities = [
     {
         automationName: 'XCUITest',
         // The defaults you need to have in your config
-        deviceName: 'iPhone 8',
+        deviceName: 'iPad Pro',
         platformName: 'iOS',
-        platformVersion: '13.0',
+        platformVersion: '13.3.1',
         orientation: 'PORTRAIT',
         maxInstances: 1,
         printPageSourceOnFindFailure: true,
         // The path to the app
-        //app: join(process.cwd(), './build/wdio-mobile-utils-demo.app'),
-        app: 'com.github.martinfrancois.demo',
+        app: join(process.cwd(), './build/wdio-mobile-utils-demo.ipa'),
+        //app: 'com.github.martinfrancois.demo',
         // Read the reset strategies very well, they differ per platform, see
         // http://appium.io/docs/en/writing-running-appium/other/reset-strategies/
         noReset: true,
         newCommandTimeout: 240,
-        autoDismissAlerts: false
+        autoDismissAlerts: false,
+        udid: 'auto',
+        xcodeOrgId: process.env.FASTLANE_TEAM_ID,
+        xcodeSigningId: 'iPhone Developer'
     }
 ];
 
