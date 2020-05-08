@@ -21,20 +21,14 @@ config.capabilities = [
         // Some default settings
         // You can find more info in the TO Appium Basic Setup section
         platformName: 'iOS',
-        platformVersion: '12',
+        platformVersion: '13',
         printPageSourceOnFindFailure: true,
         idleTimeout: 180,
-        noReset: true,
         orientation: 'PORTRAIT',
         newCommandTimeout: 180,
         phoneOnly: true,
         tabletOnly: false,
-        autoDismissAlerts: false,
-        deviceName: '^(?!iPhone 5|iPhone SE|iPhone 6).*$',
-        // fix for "Remote debugger not connected" see: https://github.com/appium/appium/issues/12344
-        safariGarbageCollect: false,
-        showSafariNetworkLog: false,
-        maxInstances: 5
+        deviceName: '^(?!iPhone 5|iPhone SE|iPhone 6).*$'
     }
 ];
 
