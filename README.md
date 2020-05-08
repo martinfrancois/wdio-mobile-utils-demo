@@ -179,6 +179,8 @@ npm run e2e.ios.sim.sauce         # Runs the test on Sauce Labs Virtual Cloud
 
 ### iOS Real Device
 
+To run E2E tests on real iOS devices locally, remember after connecting the device to your Mac to enable UI automation in the developer settings on the device.
+
 ```shell script
 npm run e2e.ios.real.run           # Runs the test locally
 npm run e2e.ios.real.debug         # Runs the test locally in debug mode
