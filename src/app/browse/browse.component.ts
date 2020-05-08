@@ -4,7 +4,7 @@ import * as dialogs from 'tns-core-modules/ui/dialogs';
 @Component({
     selector: 'Browse',
     templateUrl: './browse.component.html',
-    styleUrls: ['./browse.scss']
+    styleUrls: ['./browse.scss'],
 })
 export class BrowseComponent implements OnInit {
     infoText = 'Please tap the button below:';
