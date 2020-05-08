@@ -44,7 +44,7 @@
     "e2e.wdio.run": "./node_modules/.bin/wdio ./e2e/config/wdio.conf.js",
     "e2e.reports.generate": "allure generate allure-results --clean",
     "e2e.ios.real.upload.sauce": "node uploadSauceLabs.js build/wdio-mobile-utils-demo.ipa",
-    "e2e.ios.sim.upload.sauce": "node uploadSauceLabs.js build/wdio-mobile-utils-demo.app.zip",
+    "e2e.ios.sim.upload.sauce": "node uploadSauceLabs.js build/wdio-mobile-utils-demo.zip",
     "e2e.android.upload.sauce": "node uploadSauceLabs.js build/wdio-mobile-utils-demo.apk"
   },
   "dependencies": {
