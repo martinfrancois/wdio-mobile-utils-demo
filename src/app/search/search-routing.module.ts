@@ -4,10 +4,13 @@ import { NativeScriptRouterModule } from 'nativescript-angular/router';
 
 import { SearchComponent } from './search.component';
 
-const routes: Routes = [{ path: 'default', component: SearchComponent }];
+const routes: Routes = [
+    { path: '', redirectTo: 'search' },
+    { path: 'search', component: SearchComponent },
+];
 
 @NgModule({
     imports: [NativeScriptRouterModule.forChild(routes)],
-    exports: [NativeScriptRouterModule]
+    exports: [NativeScriptRouterModule],
 })
 export class SearchRoutingModule {}
