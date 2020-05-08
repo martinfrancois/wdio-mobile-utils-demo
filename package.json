@@ -2,10 +2,10 @@
   "nativescript": {
     "id": "com.github.martinfrancois.demo",
     "tns-android": {
-      "version": "6.4.1"
+      "version": "6.5.0"
     },
     "tns-ios": {
-      "version": "6.4.2"
+      "version": "6.5.0"
     }
   },
   "description": "Cross-platform NativeScript Application",
@@ -22,7 +22,7 @@
     "dev.build.ios.setup": "bundle exec fastlane match development",
     "dev.ios.setup": "bundle install",
     "ci.build.ios.setup": "bundle install",
-    "ci.base.setup": "npm i -g typescript@3.5.3 && echo no | npm i -g nativescript@6.4.1 && tns usage-reporting disable && tns error-reporting disable && npm i && tsc",
+    "ci.base.setup": "npm i -g typescript@3.5.3 && echo no | npm i -g nativescript@6.5.0 && tns usage-reporting disable && tns error-reporting disable && npm i && tsc",
     "ci.pip.install": "sudo pip install --upgrade pip && sudo pip install six",
     "ci.android.push": "run-s build.android e2e.android.upload.sauce e2e.android.sauce",
     "ci.ios.push": "run-s build.ios e2e.ios.real.upload.sauce e2e.ios.real.sauce",
@@ -59,12 +59,12 @@
     "@angular/platform-browser-dynamic": "~8.2.0",
     "@angular/router": "~8.2.0",
     "@nativescript/theme": "~2.3.2",
-    "nativescript-angular": "~8.21.0",
+    "nativescript-angular": "^8.21.0",
     "nativescript-urlhandler": "^1.3.0",
     "reflect-metadata": "~0.1.13",
-    "rxjs": "^6.5.4",
-    "tns-core-modules": "~6.4.2",
-    "zone.js": "~0.9.1"
+    "rxjs": "^6.4.0",
+    "tns-core-modules": "~6.5.0",
+    "zone.js": "^0.9.1"
   },
   "devDependencies": {
     "@angular-eslint/builder": "0.0.1-alpha.20",

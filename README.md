@@ -35,7 +35,7 @@
 Prerequisites:
 
 - NodeJS 10 or 12
-- NativeScript 6.4.1 or newer
+- NativeScript 6.5.0 or newer
   - follow the [CLI full setup guide](https://docs.nativescript.org/angular/start/quick-setup#full-setup) for your operating system
 
 ## Basic Installation
