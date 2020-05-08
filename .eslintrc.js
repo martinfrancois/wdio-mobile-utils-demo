@@ -38,9 +38,6 @@ module.exports = {
         // ORIGINAL tslint.json -> "contextual-lifecycle": true,
         '@angular-eslint/contextual-lifecycle': 'error',
 
-        // ORIGINAL tslint.json -> "directive-class-suffix": true,
-        '@angular-eslint/directive-class-suffix': 'error',
-
         // ORIGINAL tslint.json -> "directive-selector": [true, "attribute", "app", "camelCase"],
         '@angular-eslint/directive-selector': [
           'error',
