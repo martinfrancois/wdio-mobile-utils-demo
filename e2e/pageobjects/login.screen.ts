@@ -3,6 +3,8 @@ import { Fixture } from '../fixture/fixture';
 
 enum Selectors {
     TITLE = 'Login',
+    USERNAME = 'Username',
+    PASSWORD = 'Password',
 }
 
 class LoginScreen extends AppScreen {
@@ -12,6 +14,22 @@ class LoginScreen extends AppScreen {
 
     navigateTo(fixture: Fixture): void {
         // is the default page, no navigation necessary
+    }
+
+    get username(): WebdriverIO.Element {
+        return $(Selectors.USERNAME);
+    }
+
+    get password(): WebdriverIO.Element {
+        return $(Selectors.PASSWORD);
+    }
+
+    get loginTitle(): WebdriverIO.Element {
+        return $$(Selectors.TITLE)[0];
+    }
+
+    get loginButton(): WebdriverIO.Element {
+        return $$(Selectors.TITLE)[1];
     }
 }
 
