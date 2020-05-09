@@ -31,7 +31,7 @@ config.capabilities = [
         automationName: 'XCUITest',
         platformName: 'iOS',
         // see here for supported combinations: https://wiki.saucelabs.com/display/DOCS/Platform+Configurator#/
-        platformVersion: '12.2',
+        platformVersion: '13.0',
         deviceName: 'iPhone 8 Simulator',
         printPageSourceOnFindFailure: true,
         idleTimeout: 120,
