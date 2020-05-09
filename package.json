@@ -12,6 +12,7 @@
   "license": "Apache-2.0",
   "repository": "https://github.com/martinfrancois/wdio-mobile-utils-demo",
   "scripts": {
+    "prettier-reformat-ts": "node_modules/.bin/prettier \"src/**/*.ts*\" --write",
     "lint": "node_modules/.bin/eslint --ext .js,.ts src",
     "preview": "tns preview",
     "run.android": "tns run android --env.aot",
