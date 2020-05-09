@@ -44,7 +44,7 @@ config.capabilities = [
         app: 'sauce-storage:wdio-mobile-utils-demo.app.zip',
         waitForAppScript: 'true;',
         build: process.env.BUILD_NUMBER,
-        appiumVersion: '1.17.0',
+        appiumVersion: '1.16.0',
         browserName: '',
         // fix for "Remote debugger not connected" see: https://github.com/appium/appium/issues/12344
         safariGarbageCollect: false,
