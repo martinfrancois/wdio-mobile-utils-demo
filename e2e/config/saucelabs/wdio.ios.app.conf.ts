@@ -41,7 +41,7 @@ config.capabilities = [
         phoneOnly: true,
         tabletOnly: false,
         autoDismissAlerts: false,
-        app: 'sauce-storage:wdio-mobile-utils-demo.zip',
+        app: 'sauce-storage:wdio-mobile-utils-demo.app.zip',
         waitForAppScript: 'true;',
         build: process.env.BUILD_NUMBER,
         appiumVersion: '1.17.0',
