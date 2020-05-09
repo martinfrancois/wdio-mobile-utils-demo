@@ -1,26 +1,26 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { RouterExtensions } from 'nativescript-angular/router';
+import { User } from '~/app/shared/user.model';
 import * as dialogs from 'tns-core-modules/ui/dialogs';
+import { RouterExtensions } from 'nativescript-angular/router';
 
 @Component({
+    selector: 'Login',
     moduleId: module.id,
-    selector: 'login-page',
     templateUrl: './login.component.html',
     styleUrls: ['./login.scss'],
 })
 export class LoginComponent {
-    username: string;
-    password: string;
-    @ViewChild('passwordField', { static: false }) passwordField: ElementRef;
+    user: User;
+
+    @ViewChild('password', { static: false }) password: ElementRef;
 
     constructor(private routerExtension: RouterExtensions) {
-        this.username = '';
-        this.password = '';
+        this.user = new User();
     }
 
     submit() {
-        console.log('user: ', this.username, ', ', this.password);
-        if (!this.username || !this.password) {
+        console.log('user: ', JSON.stringify(this.user));
+        if (!this.user.username || !this.user.password) {
             this.alert('Please provide both a username and password.');
             return;
         }
@@ -34,11 +34,11 @@ export class LoginComponent {
         });
     }
 
-    focusPassword() {
-        this.passwordField.nativeElement.focus();
-    }
-
     alert(message: string) {
         dialogs.alert(message);
+    }
+
+    focusPassword() {
+        this.password.nativeElement.focus();
     }
 }

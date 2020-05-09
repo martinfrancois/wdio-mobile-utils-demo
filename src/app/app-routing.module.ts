@@ -8,10 +8,6 @@ export const COMPONENTS = [LoginComponent];
 const routes: Routes = [
     { path: '', redirectTo: '/login', pathMatch: 'full' },
     {
-        path: 'login',
-        component: LoginComponent,
-    },
-    {
         path: 'tabs',
         loadChildren: () =>
             import('~/app/tabs/tabs.module').then((m) => m.TabsModule),
