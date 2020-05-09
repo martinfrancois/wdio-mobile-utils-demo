@@ -16,6 +16,14 @@ class LoginScreen extends AppScreen {
         this.waitForDisplayed();
     }
 
+    setUsername(text: string) {
+        this.username.setValue(text);
+    }
+
+    setPassword(text: string) {
+        this.password.setValue(text);
+    }
+
     get username(): WebdriverIO.Element {
         return $(Selectors.USERNAME);
     }
@@ -24,12 +32,8 @@ class LoginScreen extends AppScreen {
         return $(Selectors.PASSWORD);
     }
 
-    get loginTitle(): WebdriverIO.Element {
-        return $$(Selectors.TITLE)[0];
-    }
-
     get loginButton(): WebdriverIO.Element {
-        return $$(Selectors.TITLE)[1];
+        return $$(Selectors.TITLE)[2];
     }
 }
 
