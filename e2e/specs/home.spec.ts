@@ -15,7 +15,7 @@ describe('Home', () => {
         fixture.teardown();
     });
 
-    it('should test', () => {
-        browser.pause(20000);
+    it('should be at the home screen', () => {
+        homeScreen.waitForDisplayed();
     });
 });

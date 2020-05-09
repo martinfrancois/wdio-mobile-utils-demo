@@ -15,6 +15,10 @@ describe('Login', () => {
         fixture.teardown();
     });
 
+    it('should be at the login screen', () => {
+        loginScreen.waitForDisplayed();
+    });
+
     it('should show a dialog and not login if no credentials are entered', () => {
         // TODO
     });
