@@ -31,8 +31,8 @@ config.capabilities = [
         // http://appium.io/docs/en/writing-running-appium/other/reset-strategies/
         noReset: true,
         newCommandTimeout: 240,
-        autoDismissAlerts: false
-    }
+        autoDismissAlerts: false,
+    },
 ];
 
 // ====================

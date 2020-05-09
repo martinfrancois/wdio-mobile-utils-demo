@@ -1,4 +1,5 @@
 import AllureReporter from '@wdio/allure-reporter';
+
 const packagejson = require('../../package.json');
 
 const debug = process.env.DEBUG;
@@ -13,7 +14,7 @@ const config: WebdriverIO.Config = {
     execArgv: debug ? ['--inspect'] : [],
     jasmineNodeOpts: {
         defaultTimeoutInterval: debug ? 60 * 60 * 500 : 60000,
-        expectationResultHandler: function(passed, assertion) {
+        expectationResultHandler: function (passed, assertion) {
             // intercept every assertion
             if (!passed) {
                 // get page source for debugging
@@ -22,7 +23,7 @@ const config: WebdriverIO.Config = {
                 browser.takeScreenshot();
             }
         },
-        failFast: false
+        failFast: false,
     },
     // @ts-ignore
     sync: true,
@@ -39,25 +40,25 @@ const config: WebdriverIO.Config = {
             'allure',
             {
                 outputDir: 'allure-results',
-                disableWebdriverScreenshotsReporting: false
-            }
+                disableWebdriverScreenshotsReporting: false,
+            },
         ],
         [
             'junit',
             {
                 outputDir: './junit-results',
-                outputFileFormat: function(opts) {
+                outputFileFormat: function (opts) {
                     return `wdio.${opts.cid}.xml`;
-                }
-            }
+                },
+            },
         ],
-        'spec'
+        'spec',
     ],
     // ====================
     // Some hooks
     // ====================
     // Gets executed once before all workers get launched.
-    onPrepare: function(config, capabilities) {
+    onPrepare: function (config, capabilities) {
         // if test is running with sauce labs
         if (Object.keys(capabilities[0]).includes('testobject_api_key')) {
             console.log('Running test on Sauce Labs');
@@ -71,11 +72,11 @@ const config: WebdriverIO.Config = {
     },
     // Gets executed before test execution begins. At this point you can access to all global
     // variables like `browser`. It is the perfect place to define custom commands.
-    before: function() {},
-    beforeTest: function(test) {
+    before: function () {},
+    beforeTest: function (test) {
         // addArguments can be called here for Allure Reporter
     },
-    afterTest: function(test) {
+    afterTest: function (test) {
         // addArguments can be called here for Allure Reporter
         const buildNumber = process.env.TRAVIS_BUILD_NUMBER;
         const branchName = process.env.TRAVIS_BRANCH;
@@ -113,19 +114,19 @@ const config: WebdriverIO.Config = {
     },
     // Gets executed after all workers got shut down and the process is about to exit. An error
     // thrown in the onComplete hook will result in the test run failing.
-    onComplete: function(exitCode, config, capabilities, results) {},
+    onComplete: function (exitCode, config, capabilities, results) {},
     processSauceCapabilities(capabilities) {
         console.log('Running test on app with latest version');
 
         const testName = getTestName();
         console.log('Sauce Labs Test Name: ' + testName);
 
-        capabilities.map(capability => {
+        capabilities.map((capability) => {
             capability.testobject_test_name = testName;
         });
 
         return capabilities;
-    }
+    },
 };
 
 export { config };
@@ -146,7 +147,7 @@ function getTestName() {
     items.push(version, branchName);
 
     // remove all items that are undefined / null
-    items = items.filter(item => item);
+    items = items.filter((item) => item);
 
     // end result will look something like this:
     // triggered from build server: 1234 | 0.5.2 | develop
