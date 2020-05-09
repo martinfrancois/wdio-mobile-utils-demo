@@ -17,6 +17,15 @@ export class AppComponent implements OnInit {
     ) {}
 
     ngOnInit() {
+        if (!this.deeplinkRoute) {
+            setTimeout(() => {
+                this.zone.run(() => {
+                    this.routerExtension.navigateByUrl('/login', {
+                        clearHistory: true,
+                    });
+                });
+            });
+        }
         handleOpenURL((appURL: AppURL) => {
             // Deeplink example: demodeeplink://tabs/default
             this.deeplinkRoute = appURL.path;

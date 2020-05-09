@@ -6,7 +6,6 @@ import { LoginComponent } from '~/app/login/login.component';
 export const COMPONENTS = [LoginComponent];
 
 const routes: Routes = [
-    { path: '', redirectTo: '/login', pathMatch: 'full' },
     {
         path: 'tabs',
         loadChildren: () =>
