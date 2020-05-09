@@ -1,4 +1,4 @@
-import { FixtureBuilder } from './FixtureBuilder';
+import { FixtureBuilder } from './fixtureBuilder';
 import { openDeeplink } from 'wdio-mobile-utils';
 import { Deeplink, DEEPLINK_PREFIX } from '../model/deeplink';
 import { getAppId } from '../utils/utils';

@@ -1,5 +1,5 @@
 import { DEFAULT_TIMEOUT } from '../constants';
-import { Fixture } from '../fixture/Fixture';
+import { Fixture } from '../fixture/fixture';
 
 export default abstract class AppScreen {
     selector: string;

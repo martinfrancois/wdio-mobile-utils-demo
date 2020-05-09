@@ -1,4 +1,4 @@
-import { Fixture } from './Fixture';
+import { Fixture } from './fixture';
 import { Deeplink } from '../model/deeplink';
 
 export class FixtureBuilder {
