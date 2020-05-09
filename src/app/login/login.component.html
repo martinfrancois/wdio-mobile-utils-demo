@@ -1,5 +1,5 @@
 <ActionBar>
-  <Label text="Login"></Label>
+  <Label text="Login" automationText="Login"></Label>
 </ActionBar>
 
 <GridLayout>
@@ -8,6 +8,7 @@
       <TextField
         class="input"
         hint="Username"
+        automationText="Username"
         returnKeyType="next"
         (returnPress)="focusPassword()"
         [(ngModel)]="user.username"
@@ -18,6 +19,7 @@
       <TextField
         class="input"
         #password
+        automationText="Password"
         hint="Password"
         secure="true"
         returnKeyType="done"
@@ -27,6 +29,11 @@
       ></TextField>
     </GridLayout>
 
-    <Button text="Login" (tap)="submit()" class="-primary m-t-20"></Button>
+    <Button
+      text="Login"
+      automationText="Login"
+      (tap)="submit()"
+      class="-primary m-t-20"
+    ></Button>
   </StackLayout>
 </GridLayout>
