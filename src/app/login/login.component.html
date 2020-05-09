@@ -2,7 +2,32 @@
   <Label text="Login"></Label>
 </ActionBar>
 
-<StackLayout>
-  <Label text="Logged in!"></Label>
-  <Button text="Go To Home Page" (tap)="onNavigateHome()"></Button>
-</StackLayout>
+<FlexboxLayout class="page">
+  <StackLayout class="form">
+    <StackLayout class="input-field">
+      <TextField
+        class="input"
+        hint="Username"
+        autocorrect="false"
+        autocapitalizationType="none"
+        [(ngModel)]="username"
+        returnKeyType="next"
+        (returnPress)="focusPassword()"
+      ></TextField>
+      <StackLayout class="hr-light"></StackLayout>
+    </StackLayout>
+
+    <StackLayout class="input-field">
+      <TextField
+        #passwordField
+        class="input"
+        hint="Password"
+        secure="true"
+        [(ngModel)]="password"
+      ></TextField>
+      <StackLayout class="hr-light"></StackLayout>
+    </StackLayout>
+
+    <Button text="Log In" (tap)="submit()" class="-primary m-t-20"></Button>
+  </StackLayout>
+</FlexboxLayout>

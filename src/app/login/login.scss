@@ -1,0 +1,18 @@
+.page {
+  align-items: center;
+  flex-direction: column;
+}
+.form {
+  margin-left: 30px;
+  margin-right: 30px;
+  flex-grow: 2;
+  vertical-align: middle;
+}
+.input-field {
+  margin-bottom: 25px;
+  width: 100%;
+}
+.input {
+  font-size: 18px;
+  placeholder-color: #a8a8a8;
+}
