@@ -28,7 +28,8 @@ config.capabilities = [
         orientation: 'PORTRAIT',
         newCommandTimeout: 180,
         phoneOnly: true,
-        tabletOnly: false
+        tabletOnly: false,
+        appiumVersion: '1.17.0',
     },
     {
         automationName: 'XCUITest',
@@ -46,8 +47,9 @@ config.capabilities = [
         newCommandTimeout: 180,
         phoneOnly: true,
         tabletOnly: false,
-        maxInstances: 5
-    }
+        maxInstances: 5,
+        appiumVersion: '1.17.0',
+    },
 ];
 
 config.capabilities = config.processSauceCapabilities(config.capabilities);

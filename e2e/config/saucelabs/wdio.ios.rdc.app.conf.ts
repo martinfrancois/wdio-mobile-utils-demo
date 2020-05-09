@@ -28,8 +28,9 @@ config.capabilities = [
         newCommandTimeout: 180,
         phoneOnly: true,
         tabletOnly: false,
-        deviceName: '^(?!iPhone 5|iPhone SE|iPhone 6).*$'
-    }
+        deviceName: '^(?!iPhone 5|iPhone SE|iPhone 6).*$',
+        appiumVersion: '1.17.0',
+    },
 ];
 
 config.capabilities = config.processSauceCapabilities(config.capabilities);
