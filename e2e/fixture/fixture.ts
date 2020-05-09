@@ -1,6 +1,7 @@
 import { FixtureBuilder } from './FixtureBuilder';
 import { openDeeplink } from 'wdio-mobile-utils';
 import { Deeplink, DEEPLINK_PREFIX } from '../model/deeplink';
+import { getAppId } from '../utils/utils';
 
 export class Fixture {
     private _deeplinkRoute: Deeplink;
@@ -21,7 +22,11 @@ export class Fixture {
         }
 
         if (this._deeplink) {
-            openDeeplink(DEEPLINK_PREFIX + this._deeplink);
+            openDeeplink(
+                DEEPLINK_PREFIX + this._deeplink,
+                getAppId(),
+                getAppId()
+            );
         }
     }
 
