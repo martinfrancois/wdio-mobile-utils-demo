@@ -7,29 +7,14 @@
     "noEmitHelpers": true,
     "noEmitOnError": true,
     "skipLibCheck": true,
-    "lib": [
-      "es6",
-      "dom",
-      "es2015.iterable"
-    ],
+    "importHelpers": true,
+    "lib": ["es6", "dom", "es2015.iterable"],
     "baseUrl": ".",
     "paths": {
-      "~/*": [
-        "src/*"
-      ],
-      "*": [
-        "./node_modules/*"
-      ]
+      "~/*": ["src/*"],
+      "*": ["./node_modules/*"]
     },
-    "types": [
-      "node",
-      "@wdio/sync",
-      "jasmine",
-      "@wdio/allure-reporter"
-    ]
+    "types": ["node", "@wdio/sync", "jasmine", "@wdio/allure-reporter"]
   },
-  "exclude": [
-    "node_modules",
-    "platforms"
-  ]
+  "exclude": ["node_modules", "platforms"]
 }
