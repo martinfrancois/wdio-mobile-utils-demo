@@ -13,7 +13,7 @@ class LoginScreen extends AppScreen {
     }
 
     navigateTo(fixture: Fixture): void {
-        // is the default page, no navigation necessary
+        this.waitForDisplayed();
     }
 
     get username(): WebdriverIO.Element {
