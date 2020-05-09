@@ -39,11 +39,14 @@ jobs:
       osx_image: xcode11.3
       before_script: npm run ci.build.ios.setup
       script: npm run ci.ios.push
-      before_deploy: zip -r ${TRAVIS_BUILD_DIR}/build/wdio-mobile-utils-demo.app.zip build/wdio-mobile-utils-demo.app
       skip_cleanup: true
       deploy:
         - provider: script
           script: npm run build.ios.sim
+          skip_cleanup: true
+          on: *on
+        - provider: script
+          script: zip -r ${TRAVIS_BUILD_DIR}/build/wdio-mobile-utils-demo.app.zip build/wdio-mobile-utils-demo.app
           skip_cleanup: true
           on: *on
         - provider: releases
