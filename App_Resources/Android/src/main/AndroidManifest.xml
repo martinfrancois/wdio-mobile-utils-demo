@@ -19,23 +19,29 @@
 		android:allowBackup="true"
 		android:icon="@drawable/icon"
 		android:label="@string/app_name"
-		android:theme="@style/AppTheme">
+		android:theme="@style/AppTheme"
+		android:launchMode="singleTask">
 
-		<activity
-			android:name="com.tns.NativeScriptActivity"
-			android:label="@string/title_activity_kimera"
-			android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout|locale|uiMode"
-			android:theme="@style/LaunchScreenTheme"
-			android:launchMode="singleTask">
+        <activity
+            android:name="com.tns.NativeScriptActivity"
+            android:label="@string/app_name"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/LaunchScreenTheme">
 
-			<meta-data android:name="SET_THEME_ON_LAUNCH" android:resource="@style/AppTheme" />
+            <meta-data android:name="SET_THEME_ON_LAUNCH" android:resource="@style/AppTheme" />
 
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 			<intent-filter>
-				<data android:scheme="demodeeplink" />
-				<action android:name="android.intent.action.MAIN" />
-				<category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="demodeeplink"/>
 			</intent-filter>
-		</activity>
+        </activity>
 		<activity android:name="com.tns.ErrorReportActivity"/>
 	</application>
 </manifest>
