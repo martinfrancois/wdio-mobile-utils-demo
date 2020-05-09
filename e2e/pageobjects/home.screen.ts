@@ -11,7 +11,11 @@ class HomeScreen extends AppScreen {
     }
 
     navigateTo(fixture: Fixture): void {
-        this.waitForDisplayed();
+        if (fixture.deeplink) {
+            this.waitForDisplayed();
+        } else {
+            // TODO: navigate to tab
+        }
     }
 }
 
