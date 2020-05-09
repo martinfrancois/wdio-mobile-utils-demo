@@ -2,9 +2,9 @@ import AppScreen from './app.screen';
 import { Fixture } from '../fixture/fixture';
 
 enum Selectors {
-    TITLE = 'Login',
-    USERNAME = 'Username',
-    PASSWORD = 'Password',
+    TITLE = '~Login',
+    USERNAME = '~Username',
+    PASSWORD = '~Password',
 }
 
 class LoginScreen extends AppScreen {
