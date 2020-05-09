@@ -32,8 +32,7 @@ export class AppComponent implements OnInit {
             console.log(
                 'App was opened through deeplink: ' + this.deeplinkRoute
             );
-            // Do the routing in the Angular Zone on next tick,
-            // to ensure that we're in the right context and router is ready.
+            // Route to the deeplink
             setTimeout(() => {
                 this.zone.run(() => {
                     this.routerExtension.navigateByUrl(
