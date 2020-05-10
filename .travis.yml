@@ -22,6 +22,7 @@ jobs:
       jdk: oraclejdk8
       env:
         - BuildAndroid="29"
+      before_script: yes | sdkmanager "platforms;android-29"
       script: npm run ci.android.push
       deploy:
         - provider: releases
