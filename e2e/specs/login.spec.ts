@@ -2,6 +2,7 @@ import loginScreen from '../pageobjects/login.screen';
 import { FixtureBuilder } from '../fixture/fixtureBuilder';
 import { Fixture } from '../fixture/fixture';
 import homeScreen from '../pageobjects/home.screen';
+import { acceptAlert, waitForAlertDisplayed } from 'wdio-mobile-utils';
 
 describe('Login', () => {
     let fixture: Fixture;
@@ -20,7 +21,10 @@ describe('Login', () => {
     });
 
     it('should show a dialog and not login if no credentials are entered', () => {
-        // TODO
+        loginScreen.loginButton.click();
+        waitForAlertDisplayed();
+        acceptAlert();
+        loginScreen.waitForDisplayed(); // verify we are still on the login screen
     });
 
     it('should login when credentials are provided', () => {
