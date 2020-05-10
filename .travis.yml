@@ -21,7 +21,7 @@ jobs:
       os: linux
       jdk: oraclejdk8
       env:
-        - BuildAndroid="28"
+        - BuildAndroid="29"
       script: npm run ci.android.push
       deploy:
         - provider: releases
