@@ -27,8 +27,26 @@ config.capabilities = [
         // http://appium.io/docs/en/writing-running-appium/other/reset-strategies/
         fullReset: true, // if set to true, will uninstall app after the end of test. Should be the default to test changes in the code.
         noReset: false, // if set to true, will not have app uninstall after the end of the test. Can be set to speed up writing test cases.
-        newCommandTimeout: 240
-    }
+        newCommandTimeout: 240,
+    },
+    {
+        automationName: 'XCUITest',
+        // The defaults you need to have in your config
+        deviceName: 'iPhone 8',
+        platformName: 'iOS',
+        platformVersion: '13.0',
+        orientation: 'PORTRAIT',
+        maxInstances: 1,
+        printPageSourceOnFindFailure: true,
+        // The path to the app
+        //app: join(process.cwd(), './build/wdio-mobile-utils-demo.app'),
+        app: 'com.github.martinfrancois.demo',
+        // Read the reset strategies very well, they differ per platform, see
+        // http://appium.io/docs/en/writing-running-appium/other/reset-strategies/
+        noReset: true,
+        newCommandTimeout: 240,
+        autoDismissAlerts: false,
+    },
 ];
 
 // ====================

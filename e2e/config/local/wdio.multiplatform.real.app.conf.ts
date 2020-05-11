@@ -15,6 +15,21 @@ config.specs = ['./e2e/specs/**/*.spec.ts'];
 // http://appium.io/docs/en/writing-running-appium/caps/#general-capabilities
 config.capabilities = [
     {
+        // The defaults you need to have in your config
+        automationName: 'UiAutomator2',
+        deviceName: 'OnePlus 7T Pro',
+        platformName: 'Android',
+        maxInstances: 1,
+        //platformVersion: '9.0',
+        orientation: 'PORTRAIT',
+        app: join(process.cwd(), './build/wdio-mobile-utils-demo.apk'),
+        // Read the reset strategies very well, they differ per platform, see
+        // http://appium.io/docs/en/writing-running-appium/other/reset-strategies/
+        fullReset: true, // if set to true, will uninstall app after the end of test. Should be the default to test changes in the code.
+        noReset: false, // if set to true, will not have app uninstall after the end of the test. Can be set to speed up writing test cases.
+        newCommandTimeout: 240,
+    },
+    {
         automationName: 'XCUITest',
         // The defaults you need to have in your config
         deviceName: 'iPad Pro',

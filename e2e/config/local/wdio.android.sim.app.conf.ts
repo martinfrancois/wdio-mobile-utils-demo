@@ -15,26 +15,19 @@ config.specs = ['./e2e/specs/**/*.spec.ts'];
 // http://appium.io/docs/en/writing-running-appium/caps/#general-capabilities
 config.capabilities = [
     {
-        automationName: 'XCUITest',
         // The defaults you need to have in your config
-        deviceName: 'iPad Pro',
-        platformName: 'iOS',
-        platformVersion: '13.4.1',
-        orientation: 'PORTRAIT',
+        automationName: 'UiAutomator2',
+        deviceName: 'wdio-mobile-utils-demo',
+        platformName: 'Android',
         maxInstances: 1,
-        printPageSourceOnFindFailure: true,
-        // The path to the app
-        app: process.env.INSTALL
-            ? join(process.cwd(), './build/wdio-mobile-utils-demo.ipa')
-            : 'com.github.martinfrancois.demo',
+        //platformVersion: '9.0',
+        orientation: 'PORTRAIT',
+        app: join(process.cwd(), './build/wdio-mobile-utils-demo.apk'),
         // Read the reset strategies very well, they differ per platform, see
         // http://appium.io/docs/en/writing-running-appium/other/reset-strategies/
-        noReset: true,
+        fullReset: true, // if set to true, will uninstall app after the end of test. Should be the default to test changes in the code.
+        noReset: false, // if set to true, will not have app uninstall after the end of the test. Can be set to speed up writing test cases.
         newCommandTimeout: 240,
-        autoDismissAlerts: false,
-        udid: 'auto',
-        xcodeOrgId: process.env.FASTLANE_TEAM_ID,
-        xcodeSigningId: 'iPhone Developer',
     },
 ];
 
