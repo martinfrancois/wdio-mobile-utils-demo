@@ -22,7 +22,7 @@ config.capabilities = [
         // Some default settings
         // You can find more info in the TO Appium Basic Setup section
         platformName: 'Android',
-        platformVersion: '7',
+        platformVersion: '9',
         idleTimeout: 180,
         noReset: true,
         orientation: 'PORTRAIT',
@@ -30,6 +30,7 @@ config.capabilities = [
         phoneOnly: true,
         tabletOnly: false,
         appiumVersion: '1.17.0',
+        maxInstances: 2,
     },
     {
         automationName: 'XCUITest',
@@ -40,14 +41,14 @@ config.capabilities = [
         // Some default settings
         // You can find more info in the TO Appium Basic Setup section
         platformName: 'iOS',
-        platformVersion: '10',
+        platformVersion: '13',
         idleTimeout: 180,
         noReset: true,
         orientation: 'PORTRAIT',
         newCommandTimeout: 180,
         phoneOnly: true,
         tabletOnly: false,
-        maxInstances: 5,
+        maxInstances: 2,
         appiumVersion: '1.17.0',
     },
 ];
