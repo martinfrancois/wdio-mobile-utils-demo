@@ -30,6 +30,7 @@ describe('Login', () => {
     it('should login when credentials are provided', () => {
         loginScreen.setUsername('Hello SauceCon Online 2020!');
         loginScreen.setPassword('test');
+        browser.hideKeyboard();
         loginScreen.loginButton.click();
 
         homeScreen.waitForDisplayed();
