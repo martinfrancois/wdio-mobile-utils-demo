@@ -51,7 +51,7 @@ npm install
 To be able to build an IPA file for deployment on real iOS devices, run the following command:
 
 ```shell script
-npm run dev.ios.setup
+npm run setup.ios.real
 ```
 
 Then copy the file `.env.default.template` as `.env.default` and fill out the missing environment variables in the section `# iOS Real Device Build`.
@@ -144,7 +144,7 @@ build/wdio-mobile-utils-demo.app
 To build the app as an .ipa file to install on a real iOS device, run the following command:
 
 ```shell script
-npm run build.ios
+npm run build.ios.real
 ```
 
 You will then be able to find the built file in the following path:
@@ -209,7 +209,7 @@ npm run e2e.multiplatform.sauce         # Runs the test on Sauce Labs RDC on bot
 To install or update iOS developer certificates using fastlane, run the following command:
 
 ```shell script
-npm run dev.build.ios.setup
+npm run dev.build.ios.real.setup
 ```
 
 # Upload App to Sauce Labs

@@ -38,7 +38,7 @@ jobs:
       language: objective-c
       os: osx
       osx_image: xcode11.3
-      before_script: npm run ci.build.ios.setup
+      before_script: npm run setup.ios.real
       script: npm run ci.ios.push
       skip_cleanup: true
       deploy:
