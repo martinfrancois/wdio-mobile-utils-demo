@@ -1,6 +1,6 @@
 import AppScreen from './app.screen';
 import { Fixture } from '../fixture/fixture';
-import { selectEqualsText } from 'wdio-mobile-utils';
+import { mobile$, Selector } from 'wdio-mobile-utils';
 
 enum Selectors {
     TITLE = '~Login',
@@ -27,11 +27,11 @@ class LoginScreen extends AppScreen {
     }
 
     get username(): WebdriverIO.Element {
-        return selectEqualsText(Selectors.USERNAME) as WebdriverIO.Element;
+        return mobile$(Selector.text(Selectors.USERNAME));
     }
 
     get password(): WebdriverIO.Element {
-        return selectEqualsText(Selectors.PASSWORD) as WebdriverIO.Element;
+        return mobile$(Selector.text(Selectors.PASSWORD));
     }
 
     get loginButton(): WebdriverIO.Element {
